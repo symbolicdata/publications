@@ -1,0 +1,367 @@
+%    Latex Template for ACA 2015
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    DO NOT CHANGE THE SETTINGS BELOW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{url}
+
+
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    DO NOT CHANGE THE SETTINGS ABOVE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\vspace{-0.8cm}
+\begin{flushleft}
+\Large \textbf{\noindent
+%%% PLEASE INSERT THE TITLE OF YOUR TALK HERE %%%%%%%
+SymbolicData, Computer Algebra and Web 2.0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{0.5cm}
+\normalsize
+ %%%%%%             NAMES OF AUTHORS         %%%%%%
+ %%%%%% NAME OF SPEAKER SHOULD BE UNDERLINED %%%%%%%%%
+\normalsize{
+ %%%%%% FOR EXAMPLE %%%%%
+\underline{H.-G. Gr\"abe}$^1$, A. Heinle$^2$, S. Johanning$^3$
+ %%%%%%%%%%%%%%%%%%%%%%%%
+} \\
+\vspace{5mm}
+\textit{\footnotesize
+ %%%%%% AFFILIATION OF AUTHORS %%%%%%
+$^1$ Leipzig University, Germany,
+graebe@informatik.uni-leipzig.de\\
+$^2$ University of Waterloo, Canada,
+aheinle@uwaterloo.ca\\
+$^3$ Leipzig University, Germany,
+simonjohanning@googlemail.com\\
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+\end{flushleft}
+\def\SD{\textsc{Symbolic\-Data}}
+%The extended abstract length is limited to 5  pages
+
+\section{Introduction}
+
+What is Computer Algebra (CA)? Twenty years ago more than 200 leading edge
+computer algebraists in a worldwide joint effort compiled a description of the
+CA landscape \cite{CAHB} and defined the target of CA in the following way:
+\begin{quote}\small
+  ``Computer Algebra is a subject of science devoted to methods for solving
+  mathematically formulated problems by symbolic algorithms, and to
+  implementation of these algorithms in software and hardware. It is based on
+  the exact finite representation of finite or infinite mathematical objects
+  and structures, and allows for symbolic and abstract manipulation by a
+  computer. Structural mathematical knowledge is used during the design as well
+  as for verification and complexity analysis of the respective algorithms.
+  Therefore computer algebra can be effectively employed for answering
+  questions from various areas of computer science and mathematics, as well as
+  natural sciences and engineering, provided they can be expressed in a
+  mathematical model.'' \cite[p. 2]{CAHB}
+\end{quote}
+Johannes Grabmeier, at that time head of the German CA Fachgruppe,
+developed an even broader view of a subject \emph{Computer Mathematics} as a
+symbiosis of computer technology and mathematics at large as the true core of
+``Scientific Computing'' \cite{Grabmeier95}. Such a
+\emph{technology\footnote{Technology considered in the broad sense of
+    \emph{applicable processual knowledge} in the ancient greek meaning, see
+    e.g., \cite{TechnologyWikipedia}, not in the narrow meaning of \emph{tool,
+      tool making, tool using} as, e.g., in the German VDI-3780 norm
+    \cite{VDI-Richtlinie}.}  of quantitative methods} is a corner stone of any
+science, that ``can be considered as developed''\footnote{A claim attributed to
+  Karl Marx by Paul Lafargue. David Hilbert supports such a view: ``Everything
+  that can be an object of scientific thinking as soon as it matures to
+  formation of theories is in the bondage of the axiomatic method and thus
+  indirectly of mathematics.''  \cite{Hilbert} }.  Figure 1 displays these
+concepts, the difference between deductive and numerical mathematics and the
+position of such a \emph{Computer Mathematics} between mathematics and computer
+science.
+
+\begin{table}[b]
+\begin{center}
+\newcommand{\abox}[1]{\framebox(35,15){\parbox{3cm}{\centering\large #1}}}
+\newcommand{\bbox}[1]{\makebox(35,25){\parbox{3cm}{\centering\small #1}}}
+\setlength{\unitlength}{.8mm}
+\begin{picture}(140,140)
+\put(40,125){\framebox(65,10){\centering \Large Mathematics}}
+
+\put(10,100){\abox{Numerics}}
+\put(55,100){\abox{Symbolic Computing}}
+\put(100,100){\abox{Discrete Mathematics}}
+
+\put(10,70){\bbox{Image of an uncountable world in the finite memory
+    of a computer}}
+\put(55,70){\bbox{Semantically infinite, descriptionally finite mathematical
+    structures}}
+\put(100,70){\bbox{Structurally finite mathematical structures}}
+
+\put(10,50){\dashbox(35,15){\parbox{3cm}{\centering\large
+      Approximative\\ Mathematics}}}
+\put(55,50){\dashbox(80,15){\parbox{6.5cm}{\centering \large deduktive
+      or\\ ``exact'' Mathematics}}}
+
+\put(27,43){\LARGE$\Downarrow$}
+\put(72,43){\LARGE$\Downarrow$}
+\put(117,43){\LARGE$\Downarrow$}
+
+\put(10,30){\framebox(125,10){\Large Computer-Mathematics}}
+
+\put(45,23){\LARGE$\Uparrow$}
+\put(72,23){\LARGE$\Uparrow$}
+\put(99,23){\LARGE$\Uparrow$}
+
+\put(40,0){\framebox(65,20){\parbox{6cm}{\centering \Large Computer
+    Science\\ (Informatics)}}} 
+
+\thicklines
+\put(55,124){\vector(-3,-1){25}}\put(72,124){\vector(0,-1){9}}
+\put(90,124){\vector(3,-1){25}}
+
+\end{picture}\\[10pt]
+\textbf{Figure 1: The Genesis of Computermathematics}
+\end{center}
+\end{table}
+
+Twenty years later a practical incarnation of such a vision is any of the
+mature General Purpose Computer Algebra Systems, in particular the one that
+claims to be ``the world's definitive system for modern technical computing''
+\cite{Mma}.
+
+What remained from such an integrated view -- a \emph{CA Tower of Babel} --
+twenty years later? What is the relation between the sections of ACA 2015, that
+address specialized and over the years even more and more specialized topics?
+What are the consequences of a division of CA into more and more sub- and
+subsubcommunities? Has \textsc{the Lord} confused their language\footnote{But
+  the Lord came down to see the city and the tower which the sons of men had
+  built.  And the Lord said, ``Indeed the people are one and they all have one
+  language, and this is what they begin to do; now nothing that they propose to
+  do will be withheld from them. Come, let Us go down and there confuse their
+  language, that they may not understand one another's speech.'' (Genesis 11)}
+once more?
+
+\section{The {\SD} Project}
+\subsection{The Roots}
+% source: car-54.tex -- The {\SD} Project at Large
+
+{\SD} hab been part of CA infrastructural efforts for more than 15 years.  It
+grew up from the Special Session on Benchmarking at the 1998 ISSAC conference,
+and started to build a reliable and sustainably available reference of
+Polynomial Systems data, to extend and update it, to collect meta information
+about the records, and also to develop tools to manage the data and to set up
+and run testing and benchmarking computations on the data. The main design
+decisions and implementations of the first prototype were realized by Olaf
+Bachmann and Hans-Gert Gr\"abe in 1999 and 2000. We collected data from
+\emph{Polynomial Systems Solving} and \emph{Geometry Theorem Proving}, set up a
+CVS repository, and started test computations with the main focus on Polynomial
+Systems Solving.
+
+In 2005 the Web site \url{http://www.symbolicdata.org} sponsored by the German
+CA Fachgruppe went online and a second phase of active development started.
+Data was supplied by the CoCoA group (F.~Cioffi), the Singular group
+(M.~Dengel, M.~Brickenstein, S.~Steidel, M.~Wenk), V.~Levandovskyy (non
+commutative polynomial systems, G-Algebras) and Raymond Hemmecke (Test sets
+from Integer Programming). During the Special Semester on Groebner Bases in
+March 2006 we discussed aspects to extend the project, in particular with Bruno
+Buchberger, Alexander Zapletal, and Viktor Levandovskyy.
+
+\subsection{Version 3 -- {\SD} Goes Semantic}
+% source: car-54.tex -- The {\SD} Project at Large
+
+A third phase started in 2009 when the project joined forces with the Agile
+Knowledge Engineering and Semantic Web (AKSW) Group at Leipzig University
+\cite{AKSW} in order to strongly refactor the data along standard Semantic Web
+concepts based on the Resource Description Framework (RDF) \cite{RDF}.  In
+2012--2014 these efforts were supported by a 12 month grant for Andreas Nareike
+and another 5 month grant for Simon Johanning within the \emph{Saxonian
+  E-Science Initiative} \cite{E-Science-Sachsen}.
+
+Within this scope we completed a redesign of the data along the rules of Linked
+Data and semantic, RDF-based technology, distinguishing more consequently
+between data (\emph{resources} in the RDF terminology) and meta data
+(\emph{knowledge bases} in the RDF terminology).  The new {\SD} data and tools
+were released as version~3.0 in September 2013.  Version 3.1 is to be released
+in the mid of 2015.
+
+Resources (examples for testing, profiling and benchmarking software and
+algorithms from different CA areas) are publicly available (mainly) in XML
+markup, meta data in RDF notation both from a public git repo, hosted at
+\texttt{github.org}, and from an OntoWiki based RDF data store at
+\url{http://symbolicdata.org/Data}.  Moreover, we offer a SPARQL endpoint to
+explore the data by standard Linked Data methods.
+
+The website operates on a standard installation using an Apache web server to
+deliver the data, a Virtuoso RDF data store as data backend, a SPARQL endpoint
+and (optionally) OntoWiki to explore, display and edit the data.  This standard
+installation can easily be rolled out on a local site (tested under Linux
+Debian and recent Ubuntu versions; a more detailed description can be found in
+our wiki \cite{sdwiki}) to support local testing, profiling and benchmarking.
+
+The distribution offers also tools for integration with a local computational
+environment as, e.g., provided by Sagemath \cite{Sagemath} -- the Python based
+\emph{SDEval package} \cite{sdeval} by Albert Heinle offers a JUnit-like
+framework to set up, run, log, monitor and interrupt testing and benchmarking
+computations, and the \emph{sdsage package} \cite{sdsage} by Andreas Nareike
+provides a showcase for {\SD} integration with the Sagemath computational
+environment.
+
+Currently the {\SD} data collection contains resources from the areas of
+Polynomial Systems Solving (390 records, 633 configurations), Free Algebras (83
+records), G-Algebras (8 records), GeoProofSchemes (297 records) and Test Sets
+from Integer Programming (49 records).
+
+Note that such a concept is not restricted to resources centrally managed at
+\texttt{symbolicdata.org}, but can easily be extended to other data stores on
+the web that are operated by different CA subcommunities and offer a minimum of
+Linked Data connectivity.  There are draft versions of resource descriptions
+about Fano Polytopes (8630 records) and Birkhoff Polytopes (5399 records) from
+the \texttt{polymake} project hosted by Andreas Paffenholz and about Transitive
+Groups (3605 records) from the Database for Number Fields of J{\"u}rgen
+Kl{\"u}ners and Gunter Malle that point to external resources.  For Test Sets
+we joined forces with the Normaliz group --- Tim R{\"o}mer provided some new
+benchmarks and refactored the old examples to fit with the \texttt{normaliz}
+syntax.
+
+\subsection{The Vision: Towards a Computer Algebra Social Network}
+% source: car-54.tex -- The {\SD} Project at Large
+
+I come back to the \emph{CA Tower of Babel} image unfolded in the introduction.
+If we shift the focus of any project -- and we did so for {\SD} with version
+3.0 -- from the \emph{data} to the \emph{people and their intentions}
+perspective -- \emph{why} they collect and manipulate such data -- new
+organizational perspectives for common efforts are revealed.  The business of
+any CA project is a techno-social one and we think in the spirit of
+sociomateriality \cite{Sociomateriality}, it is time to use the \emph{technical
+  means} of a semantically enriched Web 2.0 to also strengthen the
+\emph{social} part of our cooperation and to contribute to the efforts to build
+up an interconnected \emph{E-Science World}.
+
+During the last years such efforts matured within the \emph{Science at Large}.
+Services such as MathSciNet, arXiv.org, or EasyChair.org have been established
+and their usefulness is widely acknowledged. There are plenty of new
+activities, in particular by the \emph{national libraries and organizations}
+\cite{VIAF}, by the \emph{Zentralblatt Mathematik} \cite{postagging}, or by the
+IMU, that advances the vision of a \emph{21\textsuperscript{st} Century Global
+  Library for Mathematics Research} (GDML) \cite{GDML}.
+
+It is a great challenge to smaller scientific communities to adopt such
+developments for their own scientific communication processes and to join
+forces with other scientific communities to get own requirements publicly
+recognised.  A first step in such a direction could be a more detailed
+description of ongoing scientific processes using standard RDF terminology.
+
+With version 3 {\SD} started to address the technical aspects of such
+cooperational needs in more detail, developed a vision of a \emph{Computer
+  Algebra Social Network} (CASN) \cite{casn}, and started to realize it.
+
+\section{About our Talk}
+
+In this abstract we tried to explain the background of our project and in
+particular the data services available to the public. We operate these services
+on a stable basis, but the current focus of the project is on the CASN concepts
+and the difficult (social) task to get them running. In our presentation at ACA
+2015 we will concentrate on a report about the current state of our efforts
+towards such a CASN. To prepare for our talk we invite interested people to
+look at our project wiki \cite{sdwiki} and in particular at the survey paper
+\cite{casn}.
+
+We expect fruitful discussions and hope to convince more people that such a
+project is not only a ``nice to have'' but also deserves own \emph{practical}
+efforts.  The train is ready for departure. Don't miss it!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{00}
+\addcontentsline{toc}{chapter}{References}
+\setlength{\itemsep}{-1mm}
+\footnotesize\raggedright
+
+\bibitem{AKSW} The Agile Knowledge Engineering and Semantic Web Group at
+  Leipzig University, \url{http://aksw.org/About.html} [2014-02-19].
+
+\bibitem{GDML} \textit{Developing a 21st Century Global Library for Mathematics
+  Research.  Report of the Committee on Planning a Global Library of the
+  Mathematical Sciences}, The National Academies Press (2014).
+
+\bibitem{E-Science-Sachsen} The eScience Research Network Saxony,
+  \url{http://www.escience-sachsen.de} [2014-02-19].
+
+\bibitem{CAHB} J. Grabmeier, E. Kaltofen, V. Weispfenning (eds.),
+  \textit{Computer Algebra Handbook. Foundations -- Applications -- Systems},
+  Springer Verlag, Berlin (2003).
+
+\bibitem{Grabmeier95} J. Grabmeier, \textit{Computeralgebra -- eine S\"aule des
+  Wissenschaftlichen Rechnens},  it + ti, \textbf{6:5}, p. 20 (1995).
+
+\bibitem{casn} H.-G.\ Gr\"abe, S.\ Johanning, A.\ Nareike, \textit{The {\SD}
+  Project -- from Data Store to Computer Algebra Social Network},
+  Computeralgebra Rundbrief, vol. \textbf{55}, pp. 22--26 (2014), see also
+  \url{http://symbolicdata.org/Papers/car-55.pdf} [2015-04-12].
+
+\bibitem{sdeval} A. Heinle, V. Levandovskyy, \textit{The SDEval Benchmarking
+  Toolkit}, Communications in Computer Algebra, vol. \textbf{49.1},
+  pp. 1--10 (2015), see also \url{http://wiki.symbolicdata.org/SDEval}
+  [2015-04-12].
+
+\bibitem{Hilbert} Citation from \url{http://de.wikipedia.org/wiki/Wissen}
+  [2015-04-11], attributed to Hermann Weyl, \textit{Philosophie der Mathematik
+    und Naturwissenschaft}, R. Oldenbourg, Munich (1976).  
+
+\bibitem{Mma} \url{http://www.wolfram.com/mathematica/} [2015-04-11]
+
+\bibitem{sdsage} A. Nareike, \textit{The {\SD} sdsage package},  
+  \url{http://wiki.symbolicdata.org/PolynomialSystems.Sage} [2015-04-12].
+
+\bibitem{postagging} U. Sch\"oneberg, W. Sperber, \textit{POS Tagging and its
+  Applications for Mathematics}, in \textit{Intelligent Computer Mathematics},
+  LNCS vol. 8543, pp. 213--223 (2014).
+
+\bibitem{Sociomateriality} Sociomateriality, see 
+\url{http://en.wikipedia.org/wiki/Wanda_Orlikowski} [2015-04-12].
+
+\bibitem{Sagemath} Sage -- a free open-source mathematics software system,
+  \newblock \url{http://www.sagemath.org} [2014-02-19].
+
+\bibitem{sdwiki} The {\SD} Project Wiki, \url{http://wiki.symbolicdata.org}
+  [2015-04-12].
+
+\bibitem{RDF} J. Tauberer, \textit{Quick Intro to RDF},
+  \url{http://www.rdfabout.com/quickintro.xpd} [2014-02-20].
+
+\bibitem{TechnologyWikipedia} Technology,
+  \url{http://en.wikipedia.org/wiki/Technology} [2015-04-11].
+
+\bibitem{VDI-Richtlinie} DIN Deutsches Institut f{\"u}r Normung e.V.,
+  \textit{VDI 3780 -- Technology Assessment Concepts and Foundations},
+  VDI-Richtlinie, ed. 2000-09.
+
+\bibitem{VIAF} VIAF: Virtual International Authority File.
+  \url{https://viaf.org/} [2015-04-12].
+\end{thebibliography}
+\end{document}
+
+\bibitem{KR} B. Keller and I. Reiten, \textit{Cluster-titled algebras are
+  Gorenstein and stably Calabi-Yau}, Adv. Math. \textbf{211}, 1, pp. 123-151
+  (2007).
+\bibitem{WK} S. Washito and K. Karabashi, \textit{Use This Template}, in
+  \textit{Proceedings of the 5th International Conference on Photon
+    Interaction} (ICPI-2012), San Francisco, USA, ed. A. Chen, pp. 22-24
+  (2012).
+\bibitem{ABS} A.B. Smith, \textit{Describing the style for the AMMCS-CAIMS-2015
+  book of abstracts}, in C.D. Science (ed.), General Book of Wisdom,
+  2\textsuperscript{nd} ed., University of Queensland, pp. 23-42 (2011).

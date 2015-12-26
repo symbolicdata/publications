@@ -1,0 +1,99 @@
+% Created 2015-05-11 Mo 10:26
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+
+\title{\textsc{SDEval} -- A Benchmarking Toolkit for Computer Algebra}
+\author{Hans-Gert Graebe, Albert Heinle, Viktor Levandovskyy}
+\date{2015-05-08}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+
+\section{Abstract}
+\label{sec-1}
+
+Since more than a decade, the computer algebra community 
+collects interesting examples for certain algorithmic problems in several
+databases (\cite{grabe2006symbolicdata,grabe2013symbolicdata,polyDB_paffenholz}). These examples appeared either in
+the literature, or were taken from practical applications.
+
+A fair and reproducible comparison of different computer
+algebra systems solving these problems on given inputs is --
+unfortunately -- not yet common practice.
+With \textsc{SDEval} \cite{HeinleLev2015}, we aim at changing this. \textsc{SDEval} provides tools to translate
+examples from Symbolic Data into executable code for different computer algebra
+systems, and brings mechanisms to run and monitor
+their computations. Furthermore, it makes it easy for other researchers to
+run these computations themselves and verify them.
+
+\textsc{SDEval} is designed to be flexible enough and easy to extend to fit the
+needs of the various distinct areas of computer algebra. We intend to
+present the main principles of \textsc{SDEval} on our poster, as well its
+applicability across different communities. We also show an overview
+of different use-cases of the tools in \textsc{SDEval}.
+
+\section{Resources}
+\label{sec-2}
+
+
+\textsc{SDEval} is free software and is part of the Symbolic-Data
+distribution. One can obtain it from
+\begin{center}
+\href{https://github.com/symbolicdata/symbolicdata}{https://github.com/symbolicdata/symbolicdata}
+\end{center}
+The latest developments can be found in this fork:
+\begin{center}
+\href{https://github.com/ioah86/symbolicdata}{https://github.com/ioah86/symbolicdata}
+\end{center}
+
+General information on the Symbolic Data project and \textsc{SDEval}, as well as the
+latest developments are stated on the following website:
+\begin{center}
+\href{http://www.symbolicdata.org}{http://www.symbolicdata.org}
+\end{center}
+There is also a video tutorial on how to use \textsc{SDEval}. One can find it on
+\begin{center}
+\href{https://www.youtube.com/watch?v=CctmrfisZso}{https://www.youtube.com/watch?v=CctmrfisZso}
+\end{center}
+
+\bibliographystyle{apalike}
+%%\bibliography{aca_15_poster_abstract}
+\begin{thebibliography}{}
+
+\bibitem[Gr{\"a}be, 2009]{grabe2006symbolicdata}
+Gr{\"a}be, H.-G. (2009).
+\newblock The {\sc Symbolic Data} Project.
+\newblock Technical report (2000-2009).
+
+\bibitem[Gr{\"a}be et~al., 2013]{grabe2013symbolicdata}
+Gr{\"a}be, H.-G., Nareike, A., and Johanning, S.
+\newblock The {\sc Symbolic Data} Project--Towards a Computer Algebra Social
+  Network.
+\newblock {\em Workshop and Work in Progress Papers at CICM 2014 in
+CEUR-WS.org} vol. 1186 (2014)
+
+\bibitem[Heinle and Levandovskyy, 2015]{HeinleLev2015}
+Heinle, A. and Levandovskyy, V. (2015).
+\newblock The \textsc{SDEval} Benchmarking Toolkit.
+\newblock {\em ACM Commun. Comput. Algebra}, 49(1):1--9.
+\newblock DOI \url{http://doi.acm.org/10.1145/2768577.2768578}
+
+\bibitem[Paffenholz, 2015]{polyDB_paffenholz}
+Paffenholz, A. (2015).
+\newblock Polytope Database.
+\newblock URL \url{http://www.mathematik.tu-darmstadt.de/\~paffenholz/data.html}
+\end{thebibliography}
+
+\end{document}
