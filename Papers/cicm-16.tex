@@ -10,7 +10,7 @@
 \author{Hans-Gert Gr\"abe}
 \institute{Leipzig University, Leipzig, Germany\\
 \email{graebe@informatik.uni-leipzig.de}}
-\date{2016-03-15}
+\date{2016-03-18}
 \begin{document}
 \maketitle
 
@@ -44,15 +44,15 @@ Polynomial Systems Database -- was going to break down. After the end of the
 projects' fundings there was neither a commonly accepted process nor dedicated
 resources to keep the data in a reliable, concise, sustainably and digitally
 accessible way. Even within the ISSAC Special Session on Benchmarking the
-community could not agree upon a further road-map to advance that matter.
+community could not agree upon a further roadmap to advance that matter.
 
 At those times almost 20 years ago most of the nowadays well established
 concepts and standards for storage and representation of research data did not
 yet exist -- even the first version of XML as a generic markup standard had to
 be accepted by the W3C. It was Olaf Bachmann and me who developed during
-1999--2002 within the Singular group concepts, tools and data structures for a
-structured representation and storage of this data and prepared a large number
-(about 500) of instances from \emph{Polynomial Systems Solving} and
+1999--2002 with strong support by the Singular group concepts, tools and data
+structures for a structured representation and storage of this data and
+prepared about 500 instances from \emph{Polynomial Systems Solving} and
 \emph{Geometry Theorem Proving} to be available within this research
 infrastructure.
 
@@ -81,7 +81,7 @@ as Open Data services along Linked Data standards, and started both conceptual
 and practical work towards a semantic-aware Computer Algebra Social Network.
 
 Since then we continued that development.  On March 1, 2016, version 3.1 of
-the {\SD} database was released. The new release contains
+the {\SD} tools and data was released. The new release contains
 \begin{itemize}
 \item new resource descriptions (``fingerprints'' in the notion of
   \cite{cicm-14}) of remotely available data on transitive groups
@@ -89,9 +89,9 @@ the {\SD} database was released. The new release contains
   \cite{MalleKlueners}) and polytopes (databases of Andreas Paffenholz
   \cite{Paffenholz} within the \emph{polymake} project \cite{polymake}),
 \item a recompiled and extended version of test sets from integer programming
-  -- work by Tim R\"omer (\emph{normaliz} group \cite{normaliz}), 
+  -- work by Tim R\"omer (\emph{normaliz} group \cite{normaliz}) --, 
 \item an extended version of the \emph{SDEval benchmarking environment} -- work
-  by Albert Heinle \cite{heinle-15} and
+  by Albert Heinle \cite{heinle-15} -- and
 \item a partial integration ({\SD} People database, databases of upcoming and
   past conferences) of data from the CASN -- the Computer Algebra Social
   Network subproject.
@@ -102,10 +102,10 @@ redesigned better to reflect the special life-cycle requirements of the
 different parts and activities within {\SD}. We provide the following repos
 \begin{itemize}
 \item \emph{data} -- the data repo with a single master branch mainly to backup
-  recent versions of data,
-\item \emph{code} -- code directory with master and develop branches,
-\item \emph{maintenance} -- code chunks from different tasks and demos how to
-  work with RDF based data,
+  recent versions of the data,
+\item \emph{code} -- the code directory with master and develop branches,
+\item \emph{maintenance} -- code chunks from different tasks and demos as best
+  practice examples how to work with RDF based data,
 \item \emph{publications} -- a backup store of the {\LaTeX} sources of {\SD}
   publications, 
 \item \emph{web} -- an extended backup store of the {\SD} web site that
@@ -128,48 +128,64 @@ architectural redesign of the CASN subproject with the following main tasks:
 \item Strengthen the notion of a local CASN node maintained by a CA
   substructure as basis of an upcoming federated network of such nodes -- in a
   first step such a node exposes valuable information in RDF as files for
-  download and use in a local RDF store.
-\item Reorganize the CASN data collected so far according to these adjusted
-  conceptional basis using established semantic web best practices.
+  download and further exploration in a local RDF store.
+\item Reorganize the CASN data collected so far according to this adjusted
+  conceptual basis using established semantic web best practices.
 \end{itemize}
-In this paper we explain the conceptional background of such a redesign in
-more detail and put it in the context of some architectural considerations. 
+In this paper we explain the conceptual background of such a redesign in more
+detail and put it in the context of some architectural considerations.
 
 \section{Semantic Web as Web of Data}
 
+At about 2000 a crucial redesign of the web started to increase its potential
+for deeper and more intense social cooperation. Notions as Web 2.0, Web 3.0,
+Web of Data or Semantic Web were coined to reflect about such developments from
+an -- in the first place -- technical point of view.  Shortly it turned out
+that many of the effects of the ``Web 2.0'' were based on the new digital
+concepts and tools but in fact were triggered by new \emph{opportunities of
+  social interaction} and could not be reflected properly by a technologically
+centered approach. The competing notion of \emph{Social Web} emphasized such
+aspects and the proponents of a more infrastructural-technical approach coined
+notions as \emph{Web 3.0} or -- within the W3C since the end of 2013 --
+\emph{Web of Data}.
+
+The notion of \emph{Semantic Web} addressing mainly standardization processes
+is located in the middle between both perspectives. The English Wikipedia
+\cite{Wikipedia:SemanticWeb} puts it as follows:
 \begin{quote}
-The \emph{Semantic Web} is an extension of the Web through standards by the
-World Wide Web Consortium (W3C). The standards promote common data formats and
-exchange protocols on the Web, most fundamentally the Resource Description
-Framework (RDF).
+The Semantic Web is an extension of the Web through standards by the World Wide
+Web Consortium (W3C). The standards promote common data formats and exchange
+protocols on the Web, most fundamentally the Resource Description Framework
+(RDF).
 
 According to the W3C, ``The Semantic Web provides a common framework that
 allows data to be shared and reused across application, enterprise, and
 community boundaries''. The term was coined by Tim Berners-Lee for a web of
 data that can be processed by machines. {\ldots} In 2006, Berners-Lee and
 colleagues stated that: ``This simple idea {\ldots} remains largely
-unrealized''. (Source: \cite{Wikipedia:SemanticWeb})
+unrealized''.
 \end{quote}
-In this statement optimism and pessimism are close together -- the optimistic
+Semantic Web remains to be a complex socio-technical field, and in Berner-Lee's
+statement optimism and pessimism are close together -- the optimistic
 perspective concerns the potential of the ongoing development and the
 pessimistic one the time horizon of that development to mature.
 
-The core of the vision of a ``semantic web as web of data'' is an
-architectural change of the web itself. Web 1.0 started and matured as web of
+The core of the (technical) vision of a ``semantic web as web of data'' is an
+architectural change of the web itself. Web 1.0 started and matured as a web of
 interlinked presentations, in the first time as hyperlinked static HTML pages
 connected via the HTTP hypertext protocol. Modern web engines deliver
 dynamically generated HTML code (in many cases with additional Javascript
-driven visualization code) and provide interlinking of specially prepared
-information pieces between different presentation layers -- the ``content''.
-Such web applications are typically designed along a 3-tier architecture with
-data layer, business or model layer and presentation layer.  All modern web
-frameworks and web design pattern as, e.g., the Model-View-Controller (MVC) or
-the Presentation-Abstraction-Control (PAC) pattern, support and presuppose
-such a layered architecture.  The main drawback of such an architecture is its
-tight coupling within a local web server and its direction towards information
-supply \emph{ready for use}, i.e., provision of \emph{interpreted data},
-mainly controlled by the needs and world perception of the information
-\emph{providers}.
+driven visualization code and dynamic effects) and provide interlinking of
+specially prepared information pieces between different presentation layers --
+the ``content''.  Such web applications are typically designed along a 3-tier
+architecture with data layer, business or model layer and presentation layer.
+All modern web frameworks and web design pattern as, e.g., the
+Model-View-Controller (MVC) or the Presentation-Abstraction-Control (PAC)
+pattern, support and presuppose such a layered architecture.  The main drawback
+of such an architecture is its tight coupling within a local web server and its
+direction towards information supply \emph{ready for use}, i.e., provision of
+\emph{interpreted data}, mainly controlled by the needs and world perception of
+the information \emph{providers}.
 
 Unfortunately, information reveals usefulness often enough in new, unexpected
 contexts, not foreseen and even not predictable by the information
@@ -179,100 +195,174 @@ directly and to combine ``uninterpreted'' data from different sources in
 machine readable form under the control (and interpretation) of the \emph{data
   user}, not the data provider.
 
-\section{Data and Software Architectures}
+\section{Data Architects and the Semantic Web as Social Web}
 
-A deeper analysis of the problem reveals that there are no (interesting)
+A deeper analysis of the problem reveals that there is no (interesting)
 ``uninterpreted'' data. A bit stream of data exchanged between two computers
 can, e.g., represent a picture, if the computer recognizes the image format
 (analyzing the file name extension or detecting an appropriate pattern prefix
 in the bit stream -- a standard to be agreed upon \emph{before} exchanging the
-first picture), and the computer can ``interpret'' the bit stream starting a
-special algorithm to render the picture.  The picture itself is
-``reinterpreted'' once more by the user who called that picture with a certain
-goal in mind. Such multilevel interpretation processes are ubiquitous in the
-web and it is one of the difficult problems to harmonize such interpretational
-frames within social communication rooms.
+first picture, and even before writing such a program), and the computer can
+``interpret'' the bit stream starting a special algorithm to render the
+picture.  The picture itself is ``reinterpreted'' once more by the user who
+called that picture with a certain goal in mind. Such multilevel
+interpretational processes are ubiquitous in the web and it is one of the
+difficult problems to harmonize such interpretational frames within social
+communication rooms.
 
-Thus one of the central challenges of digital communication is the
-coordination of conceptual and notational conventions on a level of detail
-that can be algorithmically processed by digital machines.  Nowadays the most
-successful semantic web projects address domains with sophisticated taxonomies
-and systematics well established already in a predigital era that have
-``only'' to be fully formalized for digital use.
+Thus one of the central challenges of digital communication is the coordination
+of conceptual and notational conventions on a level of detail that can be
+algorithmically processed by digital machines.  Nowadays the most successful
+semantic web projects address domains with sophisticated taxonomies and
+systematics well established already in a predigital era that have ``only'' to
+be fully formalized for digital use.  All other tasks of semantic web
+standardization turn out to be much more complicated and require social virtues
+as open mind, open culture, empathy and readyness for cooperation compared to
+well established virtues as rivalness and competitiveness.
 
 Such requirements led to a completely new job profile within computer science
 -- in addition to \emph{software architects}, who are responsible for a
 reasonable program architecture within a single application or application
-system, nowadays we have \emph{data architects} to design powerful
-comprehensive data models (``ontologies'') for interpretational frames that
-facilitate cooperation between applications from different domains or, more
-precisely, between the users of those applications.
-
-\section{Semantic Web as Web of People}
+system, nowadays we have \emph{data architects} to design and (socially)
+implement powerful comprehensive data models (``ontologies'') for
+interpretational frames that facilitate cooperation between applications from
+different domains or, more precisely, between the users of those applications.
 
 The systematic development of such ontologies can be supported by tools but is
 in its core a socially triggered process.  Thus from the perspective of a data
-architect the web is not only a web of data but also a web of people driven by
-different interests and goals using and producing this data. The ``web of
-data'' metaphor masks not only the users of this data and their goals but also
-the coordination processes required to use the ``web of data'' in a sound way.
+architect the web is more a web of people driven by different interests and
+goals using and producing data as a web of data. The ``web of data'' metaphor
+masks not only the users of this data and their goals but also the coordination
+processes required to use the ``web of data'' in a sound way.  It is a great
+challenge for data architects to design not only technical and notational
+architectures (and models) but also processual and social architectures to get
+the semantic web mature. 
 
 RDF as language concept and framework offers its strength in such a domain --
 due to its generic concept RDF is appropriate to be used for modelling
 processes at both the data and the metadata level and can be used to describe
 not only data (resources in the RDF terminology) but also data structures
 (resource descriptions in the RDF terminology), metadata structures (languages
-or meta-meta models in other terminologies) and even more elaborated
-abstractions.  
+or meta-meta models in other terminologies) and descriptions at even more
+elaborated abstract levels to support processual and even social cooperation.
 
-\section{The \texttt{MathHub.info} Project}
+\section{OpenDreamKit and the \texttt{MathHub.info} Project}
 
-During the last years semantic web concepts largely influenced also the
-research infrastructure of science.  Within the domain of mathematics there
-are big projects on the way as WDML \cite{PitmannLynch,WDML} or EuDML
-\cite{EuDML} and also smaller ones as the semantification of the MSC2010 index
-\cite{MSC2010} or the swMATH project \cite{swmath}.
+Semantic web concepts largely influenced also the research infrastructure of
+science.  Within the domain of mathematics there are big projects on the way as
+WDML \cite{PitmannLynch,WDML} or EuDML \cite{EuDML} and also smaller ones as
+the semantification of the MSC2010 index \cite{MSC2010} or the swMATH project
+\cite{swmath}.
 
-Beyond such domain-specific efforts there is not only \emph{Google Scholar}
-but there are more combined e-science projects with global scope on the way to
-support and restructure scholarly communication using semantic technologies
-as, e.g., VIVO\footnote{\url{http://vivoweb.org}. ``{\ldots} VIVO supports
+Beyond such domain-specific efforts there is not only \emph{Google Scholar} but
+much more combined e-science projects with global scope are on the way to
+support and restructure scholarly communication using semantic technologies as,
+e.g., VIVO\footnote{\url{http://vivoweb.org}. ``{\ldots} VIVO supports
   recording, editing, searching, browsing and visualizing scholarly
   activity. VIVO encourages research discovery, expert finding, network
   analysis and assessment of research impact.  {\ldots}''. \cite{vivo}},
 VIAF\footnote{``The Virtual International Authority File (VIAF) is an
   international service designed to provide convenient access to the world's
   major name authority files.  {\ldots}''. \cite{viaf}} or OCLC\footnote{``A
-  global library cooperative that provides shared technology services,
-  original research and community programs for its membership and the library
-  community at large''.  \url{http://oclc.org}}.
+  global library cooperative that provides shared technology services, original
+  research and community programs for its membership and the library community
+  at large''.  \url{http://oclc.org}}.
 
-It is a great challenge to smaller scientific communities to adopt such
-developments for their own scientific communication processes and to join
-forces with other scientific communities to get own requirements publicly
-recognized.  
+During the last years also the funding agencies increasingly noticed the
+importance of the digital extension of research infrastructures, see, e.g., the
+ESFRI Roadmap 2016 \cite{esfri}. In particular, on 17 April 2015 the EU funding
+agency published a call ``European Research Infrastructure'' \cite{h2020}
+within the Horizon2020 Work Programme 2014--2015 with focus on
+\begin{itemize}
+\item e-infrastructure for Open Access
+\item Research Data Alliance
+\item High Performance Computing
+\item Research and Education Networking
+\item Virtual Research Environments
+\item Support measures to innovation, human resources etc. 
+\end{itemize}
+First of all notice, that also the promotion strategy of the EU funding agency
+is orthogonal to the ``web of data'' debates, strongly aims at \emph{social
+  practices} that already proved to be successful and focuses on proposals to
+reinforce such \emph{practices} and not the infrastructure itself.  Further
+infrastructural development and thus the ``web of data'' is considered rather
+as an aspect of continuation and institutionalization of successful social
+practices thus performing a funding practice that is oriented at intrinsically
+motivated processes of academic self organization compared to a system of
+externally triggered patronage.  For primarily politically motivated funding
+practices this is a quite remarkable development. 
+
+Similar aspects can be observed for the \emph{OpenDreamKit Project} \cite{odk}
+that was successful within the above mentioned subcall on Virtual Research
+Environments.  It was awarded not for promising to develop such an environment
+but since \emph{successful cooperative practices} in the area of mathematical
+software as ``toolkit for the advancement of mathematics'' were already
+developed during the last years, notably around the SageMath Project
+\cite{sagemath} despite adverse funding conditions.  The proposed development
+direction towards a (also socially highly distributed and interconnected, i.e.,
+\emph{organismically} structured) ``sustainable ecosystem of
+community-developed open software, databases, and services'' is emphasized in
+the project's abstract \cite{odk}:
+\begin{quote}
+  OpenDreamKit will be built out of a sustainable ecosystem of
+  community-developed open software, databases, and services, including popular
+  tools such as LinBox, MPIR, Sage (sagemath.org), GAP, PariGP, LMFDB, and
+  Singular. We will extend the Jupyter Notebook environment to provide a
+  flexible UI. By improving and unifying existing building blocks, OpenDreamKit
+  will maximize both sustainability and impact, with beneficiaries extending to
+  scientific computing, physics, chemistry, biology and more and including
+  researchers, teachers, and industrial practitioners.
+\end{quote}
+Such an emphasis on \emph{social interaction} is set explicitly also on the
+project's reflection focus: ``Our architecture will be informed by recent
+research into the sociology of mathematical collaboration, so as to properly
+support actual research practice'' \cite{odk}.
+\medskip
+
+Since public funding policies are driven mainly by territorially oriented
+political structures and decision processes it is a great challenge to smaller
+academic communities that are usually structured thematically and not
+territorially to adopt such developments for their own scientific communication
+processes and to join forces with other scientific communities to get own
+requirements publicly recognized.  The OpenDreamKit Project addresses the
+research infrastructure of mathematics as a whole, hence its target is a large
+enough academic community to generate funding on an EU level. The focus of the
+{\SD} CASN subproject is directed towards the much smaller academic community
+of Computer Algebra researchers.  Hence the problem to organize its own
+research infrastructure is different. I'll come back to this question in the
+next section.  
+
+In the remainder of this section I will discuss on the example of
+\texttt{MathHub.info} as subproject of OpenDreamKit in more detail the
+interplay between semantic technologies and their embedding into a funding
+structure for research infra\-structures that is mainly driven by successful
+social practices.
 
 Michael Kohlhase reported in two contributions \cite{planetary,mathhub} to the
-session \emph{Projects and Surveys} at CICM 2012 and CICM 2014 about efforts
-to ``develop a general framework -- the Planetary system -- for social
-semantic portals that support users in interacting with STEM\footnote{STEM is
-  a shortcut for ``Science, Technology, Engineering, Mathematics''.} documents
-{\ldots}'' \cite{planetary} and started with \texttt{MathHub.info} to build up
-such a research infrastructure.
+session \emph{Projects and Surveys} at CICM 2012 and CICM 2014 about efforts to
+``develop a general framework -- the Planetary system -- for social semantic
+portals that support users in interacting with STEM\footnote{STEM is a shortcut
+  for ``Science, Technology, Engineering, Mathematics''.} documents {\ldots}''
+\cite{planetary} and started with \texttt{MathHub.info} to build up such a
+research infrastructure.  It is a very interesting approach to enrich
+established STEM technologies (in particular {\LaTeX} and arXiv) semantically
+and seems to be the only OpenDreamKit subproject that addresses semantic web
+concepts and tools explicitly.
 
-Although being a very interesting approach to enrich established STEM
-technologies (in particular {\LaTeX} and arXiv) semantically it seems that it
-could not attract a broader audience so far.  Kohlhase described the design
-goal of the system in \cite{mathhub} as follows:
+In many cases such a situation runs the risk to be caught between the devil and
+the deep blue sea. Kohlhase described the design goal of the system in
+\cite{mathhub} as follows:
 \begin{quote}
   \texttt{MathHub.info} must satisfy two conflicting goals: On the one hand, it
   must be so generic that it is open to all logics and implementations; on the
   other hand, it must be aware of the semantics of the formalized content so
   that it can offer meaningful services. 
 \end{quote}
-The experience within the {\SD} Project indicates that such a design goal is
-very ambitious and requires a strategy of \emph{social} communication on a
-long run to get its results accepted by the target community.
+Elaborated goals require elaborated tools and skilled users, even if
+``meaningful services'' could be offered. The experience within the {\SD}
+Project indicates that such a design goal is very ambitious and requires a
+strategy of \emph{social} communication on a long run to get its results
+to be accepted and tools to be used by the target community.
 
 Running a research infrastructure and providing reliable access to it is a
 cross cutting concern \cite{ccc} orthogonal to the core research concerns of
@@ -286,15 +376,28 @@ such a way:
   it will establish a standardized and open library format that serves as a
   catalyst for comparison and thus evolution of systems.
 \end{quote}
-From an architectural point of view \texttt{MathHub.info} tries to integrate
-elements of a local working place environment and access elements to a global
-infrastructure that has yet to emerge. The main focus, see fig.~1 in
-\cite{mathhub}, lies on the functionality of a local working place
-environment.  The structural aspects of the formation of a global data
-infrastructure remain hidden in the boxes ``MMT'' and ``GitLab'' in that
-figure. Thus the design focuses on \emph{software architectural} aspects and
-does not address the (social) requirements of \emph{data architecture}
-building processes.
+This statement is a statement \emph{before} the OpenDreamKit project matured.
+To promote his own core goal Kohlhase offers additional benefits that have not
+much to do with semantic technologies but address \emph{social needs} and
+proposes \emph{social practices} for the target community.  Within OpenDreamKit
+this proposal encounters \emph{established practices} of archiving, versioning,
+and evolution of the other subprojects. It remains to be seen to what extend
+Kohlhase succeeds to tie semantic concepts and technologies into such a context
+with established practices that previously were mainly unaware of such semantic
+concepts.  In the pre-OpenDreamKit time the main problem was to develop
+sustainable social practices around semantic concepts, the new challenge is to
+integrate semantic concepts into established (social) practices. 
+\medskip
+
+Let me close this section with another point. From an architectural point of
+view \texttt{MathHub.info} tries to integrate elements of a local working place
+environment and access elements to a global infrastructure that has yet to
+emerge. The main focus, see fig.~1 in \cite{mathhub}, lies on the functionality
+of a local working place environment.  The structural aspects of the formation
+of a global data infra\-structure remain hidden in the boxes ``MMT'' and
+``GitLab'' in that figure. Thus the design focuses on \emph{software
+  architectural} aspects and does not address the (social) requirements of
+\emph{data architecture} building processes.
 
 Ten years of semantic web experience indicate that data architectural aspects
 are in the core of the building processes of the ``web of data'' and require
@@ -302,24 +405,7 @@ social organization in such a way that the (yet emerging) global data
 structure fits with a large number of different software frameworks and
 architecture models nowadays in use at local sites.
 
-Lets end this section of critical analysis with a clear statement about the
-valuable contribution of Kohlhase's work that he summarized in \cite{mathhub}
-as follows:
-\begin{quote}
-  Already now, \texttt{MathHub.info} is unique in its class in that it gives a
-  unified interface to multiple theorem prover libraries together with
-  linguistic and educational resources. Now that the ground work has been laid,
-  we anticipate the rapid integration of new semantic services, editing support
-  and new content.
-\end{quote}
-Kohlhase provides an elaborated system of tools and data that addresses the
-needs of the theorem prover CA subcommunity and thus is a good candidate for a
-node within an emerging Computer Algebra Social Network (CASN). Although we
-propose a roadmap towards such a CASN and realized first steps, such an idea
-goes far beyond the attempts and goals of the {\SD} Project and requires
-common efforts of a much larger community.
-
-\section{Extending the {\SD} data store}
+\section{Extending the {\SD} Data Store}
 
 During the last years the {\SD} Project adjusted its focus to address also
 more general technical and social aspects of a semantically enriched research
@@ -347,8 +433,8 @@ following experience:
   be accessed via our SPARQL endpoint \cite{sdsparql}.
 
   We applied this principle to the newly integrated data sets on polytopes and
-  on transitive groups and also within the recompiled version of Test Sets from
-  Integer Programming.  Data are hosted by the \emph{polymake} group
+  on transitive groups and also within the recompiled version of test sets from
+  integer programming.  Data are hosted by the \emph{polymake} group
   \cite{polymake}, within the \emph{Database for Number Fields}
   \cite{MalleKlueners} and by the \emph{normaliz} group \cite{normaliz}.
 \item RDF is a useful and meanwhile well established standard for metadata and
@@ -364,7 +450,7 @@ following experience:
   exchange of data. Note nevertheless, that the notational conventions of a
   subcommunity use many shortcuts that are valid only in a special
   interpretational frame (the ``general nonsense'' of the field, well known to
-  the specialists) that is hard and probably useless to formalize, since
+  the specialists) that is hard and probably unnecessary to formalize, since
   practical use of data from a special field requires a minimum of
   semantic-awareness of the user itself.
 \end{itemize}
@@ -374,7 +460,20 @@ following experience:
 The CASN subproject tries to embed aspects of the maintenance of the {\SD}
 data store into a more general process of formation of a semantically enriched
 social network of academic communication within the CA community in the sense
-of a ``web of people'' mentioned above.
+of a (social) ``web of people'' mentioned above.
+
+As first question we had to decide about the range of such a social network.
+This is a difficult question from a ``web of data'' perspective but easily
+solved from a ``web of people'' perspective: To the network belong all
+individuals who count themselves as computer algebraists or are mentioned as
+such in communication processes already covered by the CASN.  For the moment
+this input comes mainly from three mailing lists -- the [spp1489-gen] general
+mailing list of the SPP 1489 within the German Fachgruppe, the [SIGSAM-MEMBERS]
+mailing list and the [Om] mailing list of the OpenMath project.  We installed
+our own mailing list [sd-announce] -- for the moment mainly to forward selected
+mails from the [spp1489-gen] mailing list for archival purposes.  Open list
+archives are required for referencing purposes in an (upcoming) semantically
+enriched CASN news channel.
 
 A first roadmap towards such a CASN and our experimental setting was described
 in \cite{cicm-14} and developed further during the last years.  We try not to
@@ -385,6 +484,13 @@ mailing lists etc. Hence the main focus towards CASN is to develop a framework
 based on modern semantic technologies for a decentralized network that
 increases the awareness of the different parts of that already existing ``CA
 network''.
+
+We realized that this network itself is an ``overlay network'' that connects a
+greater number of research networks of individuals around special topics with
+own lightweight research infrastructures.  It is an interesting challenge for
+semantic concepts to support the requirements of intercommunity communication
+to exchange semantic content on different levels and different levels of
+detail.
 \medskip
 
 As a coarse architectural concept to establish such a network we propose
@@ -491,21 +597,25 @@ website using the \emph{EasyRDF} PHP library and also the code to operate the
 
 \subsection*{The {\SD} CASN Node}
 
-We also operate a rudimentary {\SD} CASN Node at the publicly accessible
+We also operate a rudimentary {\SD} CASN node at the publicly accessible
 directory
 \begin{center}
   \url{http://symbolicdata.org/rdf/}.
 \end{center}
 In the subdirectory \texttt{Conferences} we provide detailed information about
-five CA conferences (SPP annual meeting in Bad Boll 2014 and the CICM
+five CA conferences (the SPP annual meeting in Bad Boll 2014 and the CICM
 conferences 2012--2015) as proof of concept of standardized detailed
 conference reports using the \emph{Semantic Web Conference Ontology}
 \cite{swc}.  The records provide information about the general venue,
-programme committes, tracks and talks of the conference.  
+programme committes, tracks and talks of the conferences.  
 
 For the CICM conferences we exploited and transformed the publicly available
 XML-based representation developed by Serge Autexier to render the conference
-pages at \url{http://cicm-conference.org}. 
+pages at \url{http://cicm-conference.org} as proof of concept.  The main
+addition in our standardized detailed conference reports is the
+(semi-automatic) people disambiguation that easily allows to relate conference
+activities with other activities issuing a simple request to our SPARQL
+endpoint \cite{sdsparql}.  
 
 \raggedright
 \begin{thebibliography}{xxx}
@@ -515,9 +625,12 @@ pages at \url{http://cicm-conference.org}.
 \bibitem{ccc} Cross Cutting Concern. From Wikipedia, the Free Encyclopedia.
   \url{https://en.wikipedia.org/wiki/Cross-cutting_concern}.
 \bibitem{EuDML} EuDML. The European Digital Mathematical Library.
-  \url{https://eudml.org/} [2014-09-23]
+  \url{https://eudml.org/} [2015-09-23]
+\bibitem{esfri} Strategy Report on Research Infrastructures.  Roadmap 2016.
+  Published by the European Strategy Forum for Research Infrastructures
+  (ESFRI), Brüssel (2016).  \url{http://www.esfri.eu/roadmap-2016} [2016-03-16]
 \bibitem{FRISCO} FRISCO -- A Framework for Integrated Symbolic/Numeric
-  Computation. \url{http://www.nag.co.uk/projects/FRISCO.html} [2014-02-19]
+  Computation. \url{http://www.nag.co.uk/projects/FRISCO.html} [2016-02-19]
 \bibitem{polymake} Gawrilow, E., Joswig, M.: Polymake: a Framework for
   Analyzing Convex Polytopes. In: Kalai, G., Ziegler, G.M. (eds.), Polytopes --
   Combinatorics and Computation (Oberwolfach, 1997), pp. 43--73, DMV Sem., 29,
@@ -529,6 +642,8 @@ pages at \url{http://cicm-conference.org}.
   pp. 1243--1248 (1968). \url{doi:10.1126/science.162.3859.1243}. 
 \bibitem{heinle-15} Heinle, A., Levandovskyy, V.: The SDEval Benchmarking
   Toolkit. ACM Communications in Computer Algebra, vol. 49.1, pp. 1--10 (2015).
+\bibitem{h2020} Research Infrastructures, including e-Infrastructures.
+  \url{http://ec.europa.eu/programmes/horizon2020/en/h2020-section/research-infrastructures-including-e-infrastructures} [2016-03-16]
 \bibitem{mathhub} Iancu, M., Jucovschi, C., Kohlhase, M., Wiesing, T.: System
   Description: MathHub.info. In: Watt, S.M., Davenport, J.H., Sexton, A.P.,
   Sojka, P., Urban, J. (eds.), Intelligent Computer Mathematics. LNCS vol.
@@ -545,13 +660,17 @@ pages at \url{http://cicm-conference.org}.
   Campbell, J.A., Carette, J., Dos Reis, G., Sojka, P., Wenzel, M., Sorge,
   V. (eds.), Intelligent Computer Mathematics.  LNCS vol. 7362, pp. 458-462
   (2012).
+\bibitem{odk} OpenDreamKit: Open Digital Research Environment Toolkit for the
+  Advancement of Mathematics. \url{http://opendreamkit.org/},
+  \url{http://cordis.europa.eu/project/rcn/198334_en.html} [2016-03-16]
 \bibitem{Paffenholz} Paffenholz, A.: Polytope Database.
   \url{http://www.mathematik.tu-darmstadt.de/~paffenholz/data/}  [2016-03-08] 
 \bibitem{PitmannLynch} Pitman, J., Lynch, C.: Planning a 21st Century
   Global Library for Mathematics Research.  Notices of the AMS, August
   2014.
 \bibitem{PoSSo} The PoSSo Project. \url{http://posso.dm.unipi.it/}
-  [2014-02-19]
+  [2016-02-19]
+\bibitem{sagemath} The SageMath Project.  \url{http://www.sagemath.org/}
 \bibitem{Wikipedia:SemanticWeb} Semantic Web. From Wikipedia, the Free
   Encyclopedia. \url{https://en.wikipedia.org/wiki/Semantic_Web} [2016-03-07]
 \bibitem{swc} The Semantic Web Conference Ontology.
@@ -563,18 +682,18 @@ pages at \url{http://cicm-conference.org}.
 \bibitem{sdstore} The {\SD} RDF Data Store.  \url{http://symbolicdata.org/Data}
   [2016-03-15]
 \bibitem{sdsparql} The {\SD} SPARQL Endpoint.
-   \url{http://symbolicdata.org:8890/sparql} [2014-02-19]
+   \url{http://symbolicdata.org:8890/sparql} [2016-02-19]
 \bibitem{sdwiki} The {\SD} Project Wiki.
-   \url{http://wiki.symbolicdata.org} [2014-09-13]
+   \url{http://wiki.symbolicdata.org} [2016-03-13]
 \bibitem{viaf} VIAF -- the Virtual International Authority File.
   \url{http://viaf.org/} [2016-03-07]
 \bibitem{vivo} VIVO -- an Open Source Software and Ontology for Representing
   Scholarship.  \url{https://wiki.duraspace.org/display/VIVO/VIVO}
   [2016-03-07]
 \bibitem{cafg} Website of the German Fachgruppe Computeralgebra.   
-  \url{http://www.fachgruppe-computeralgebra.de/} [2014-03-06]
+  \url{http://www.fachgruppe-computeralgebra.de/} [2016-03-06]
 \bibitem{WDML} World Digital Mathematics Library (WDML).
-  \url{http://www.mathunion.org/ceic/wdml/} [2014-09-23]
+  \url{http://www.mathunion.org/ceic/wdml/} [2015-09-23]
 
 \end{thebibliography}
 
