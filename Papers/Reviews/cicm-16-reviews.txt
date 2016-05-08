@@ -1,0 +1,257 @@
+Dear Hans-Gert,
+
+I am sorry to report that your paper "The SymbolicData Project in a Computer
+Algebra Social Network Perspective. Some Architectural Considerations" has not
+been accepted for publication at CICM 2016.
+
+Note that CICM 2016 has a "Work-in-Progress" Track which may be suitable for
+your paper. Papers accepted there will be presented and discussed at the
+conference and included in a special proceedings volume (most probably
+CEUR-WS).
+
+You are invited to re-submit your paper there by easychair until May 20.
+Notification will be June 6. and final versions are due June 29.
+
+Michael Kohlhase (general Program Chair).
+
+----------------------- REVIEW 1 ---------------------
+PAPER: 15
+TITLE: The SymbolicData Project in a Computer Algebra Social Network
+Perspective. Some Architectural Considerations 
+AUTHORS: Hans-Gert Graebe
+
+----------- Review -----------
+
+This paper describes the evolving architecture and growth of the SymbolicData
+project.
+* Specific improvements were made to: the "people" database, particularly
+  disambiguation; 
+* development of a distributed architecture with the concept of nodes;
+* enhance the ontologies and adjustments to the data.  But perhaps more
+  importantly, 
+* it provides a high-level view of the the issues facing the development
+  of useful semantic infrastructure for collections of mathematical knowledge, 
+* in particular: the challenges of sustainability and funding; and the need
+  to focus on social processes at least as much as technical ones.
+
+In fact, that latter is perhaps the mody important topic presented here.  The
+paper is a very interesting high-level view of organizing and serving semantic
+metadata in a social network context.  It contrasts "web of data" approaches to
+social ones of community driven development of ontologies; emphasizes the role
+of social processes as necessary to generate and apply useful semantic
+annotation.
+
+These social vs. data issues may be unfamiliar to many; the paper could perhaps
+broaden its impact, with a few more concrete examples of the distinctions.
+
+I enjoyed the paper, and recommend it for acceptance.
+
+Details: ... 
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 15
+TITLE: The SymbolicData Project in a Computer Algebra Social Network
+Perspective. Some Architectural Considerations 
+AUTHORS: Hans-Gert Graebe
+
+----------- Review -----------
+The paper aims to describe reorganization of SymbolicData store to incorporate
+new vision of how information should be acquired and stored.
+
+I personally find that all the conceptual and architectural changes are
+summarized in the last two sections and the rest of the paper rephrases
+previously-seen works, lengthening the paper unnecessary.
+
+In the section 6, discussing storing "information about scientific activities
+of people mainly extracted from conference announcements", it could be nice to
+get an idea on how this information is collected: is there a script/crawler
+extracting such announcements from web/mail content or these data are populated
+manually?
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 15
+TITLE: The SymbolicData Project in a Computer Algebra Social Network
+Perspective. Some Architectural Considerations 
+AUTHORS: Hans-Gert Graebe
+
+----------- Review -----------
+The paper discusses redesigning issues of the SymbolicData project and
+overviews some of the similar projects in the area.
+
+As such, the paper has no scientific contributions, it mainly overviews past
+and recent results, the state-of-the-at of in math representation. The issues
+discussed in the paper try to motivate why a new design of the SymbolicData
+project was needed at all - these issues include settings on github and
+structuring data on the repository.
+
+I found it hard to stay motivated while reading the paper. Sections 2-4
+overview the history and related methods in math representation, and the rest
+of the paper gives details on how various directories of SymbolicData are
+organized. I wonder why these details would be interesting for others than the
+maintainers of SymbolicData.
+
+----------------------- REVIEW 4 ---------------------
+PAPER: 15
+TITLE: The SymbolicData Project in a Computer Algebra Social Network
+Perspective. Some Architectural Considerations 
+AUTHORS: Hans-Gert Graebe
+
+----------- Review -----------
+The paper describes - amongst other things - the enlargement of the
+SYMBOLICDATA database and adapts the CASN data to be Semantic Web compatible.
+
+The paper seems a bit confused.  It leaps in very quickly with very little
+explanation about the symbolicdata database - what it is for, how it is
+organised, etc.  Parts of it read like a manual - e.g., a line ‘so please
+adjust your local repo structure’.
+
+There is then a section on the semantic web which makes some strong assertions
+that I don’t believe in all cases are justified (see below for more detail).
+There is then some political discussion about the pressures of funding and
+quite a lot of detail about EU calls which seems excessive in a paper.
+Finally, sections 5 and 6 get to the work done in this paper.
+
+Perhaps one of the reasons it is a bit confusing is that there is no conclusion
+or discussion at the end to tie all the parts together, nor any clear
+explanation of the structure of the paper in the introduction.  There is also
+no discussion of systems that do similar work in other domains, from which
+surely useful lessons could be learned.  Without that, it has the feeling of
+reinventing the wheel a bit.
+
+Detailed comments:
+
+It's very strong to say no interesting unintentional data. I don't agree that
+formats, etc., have to be agreed beforehand *by the participants* - just that
+standards need to be (at least vaguely) adhered to - this allows spontaneous
+interaction (thought this can be difficult).
+
+First sentence in sec 4 confused. 
+
+Details of EU calls too specific for paper - what po/[int is being made here?
+Don't agree with summary of this being orthogonal to the Semantic Web - some of
+these topics could cover SW activity.
+
+Are these quotes from individual reviewers? It is hard to extrapolate from that
+- the statements that you make about why the project was funded are strong and
+I'm not convinced supported by the evidence.
+
+STEM is an abbreviation not a shortcut. 
+
+On p.8, a figure from another paper is discussed.  If you want to refer in
+detail to a figure, you should reproduce it.
+
+What is this 'global data structure' that is referred to?
+
+End of sec 5 - 'practical use of data from a special field requires a minimum
+of semantic-awareness of the user itself' - ionly if the data only ever stays
+within this field. But if you want it to be reusable in different domains, it's
+a big deal.
+
+Some of the points described in the CASN integration section sounds pretty
+standard - is this innovative?  Is the application of this to this domain
+innovative?  If so, how?
+
+Some of it is mentioned as not up to date - what are the steps that are being
+taken to keep the info fresh? This is crucial in the design.
+
+*******
+Overall, the paper describes work that seems useful but functional. It may be
+more innovative than it appears but this is not conveyed well.  The paper could
+do with more overview and discussion so that the structure is clearer.
+
+####################################################
+Response to the reviews 
+####################################################
+
+Addendum: All citations below are from the reviews and the CICM call of papers
+for "Projects and Surveys".
+http://cicm-conference.org/2016/cicm.php?event=surveys
+
+General: Let me emphasize several points special to my contribution: 
+
+1) SD grew up in 1998 in a situation where heavily founded projects finished
+and people formerly not involved with the projects took efforts to secure part
+of the research infrastructure developed during the project.  It was, is and
+remains (intentionally) a volunteer's project without funding and lives on the
+resources that these (changing over the time) volunteers are able to sideline
+for SD.
+
+2) My contribution is not a research paper but a paper about research
+infrastructure. 
+
+3) CICM-16 "especially solicits for papers on long standing projects".  
+
+To Review 2-4: Let me first response to the criticism about the "unstructured
+character" of the paper:
+
+The paper concentrates on explanation of the conceptual background of the SD
+redesign towards a CASN (sect. 2-5), the practical application of these
+concepts to SD redesign within the scope of available resources and the ongoing
+practical dynamics of the target communities, and contains "envisioned results
+that are valuable to shape future" - not research but - research
+infrastructure.  Sect. 1 contains a very short survey of the history of SD and
+reports on "significant new developments in our ongoing previously presented
+project".  In a revised version I put that in a separate section, add more
+references to previously published work on SD and compile a short introduction
+as a guideline through the paper as proposed by reviewer 4.
+
+The argumentative core in sect. 2-4 combines arguments about the interplay
+between socio-technical (sect. 2-3), social and political (sect. 4)
+architecture as an extract of my long standing experience in (social)
+implementation of semantic technologies in different "real world" domains, and
+map that experience to the CASN target (sect. 5). Sect. 6 describes the
+moments of implementation of this conceptual framework during the last two
+years by the SD volunteers.
+
+Some detailed remarks: 
+
+Q: How information about conference announcements is collected? 
+
+A: This data is populated neither "manually" nor "crawled" but tool-based to
+ensure quality of the data. This is a classical data architect's approach.  
+
+Q: Some of the points ... sounds pretty standard - is this innovative?
+
+A: Yes, this is very innovative, since many semantic web projects don't use and
+even don't recognize existing standards. Using standards reduces efforts and
+thus enlarges the scope of work that could be done with given resources. 
+
+Q: It's very strong to say no interesting unintentional data. I don't agree that
+formats, etc., have to be agreed beforehand ...
+
+A: The correct quote is "No interesting 'uninterpreted' data". There is a large
+and controversial philosophical discussion about that topic that cannot be
+addressed at that point. But I do not understand at all the reviewer's argument
+on the background of the example given in the text (rendering a bit stream as
+a picture).
+
+Q: Are these quotes from individual reviewers?
+
+A: As far as I see I added source information to all my citations, in
+particular in sect. 4. Since I'm not involved with any of the projects in
+sect. 4, I have no access to reviewer information about their project
+proposals.
+
+Q: What is this 'global data structure' that is referred to?
+
+A: See https://en.wikipedia.org/wiki/Semantic_Web 
+
+Q: 'practical use of data from a special field requires a minimum of
+semantic-awareness of the user itself' -- ?
+
+A: Example: To use Wreath Product decomposition information from Transitive
+Groups http://symbolicdata.org/Data/TransitiveGroups/ you have to know what a
+Wreath Product is.
+
+Q: Some of it (the data) is mentioned as not up to date - what are the steps
+that are being taken to keep the info fresh? This is crucial in the design.
+
+A: In particular the book list
+http://www.fachgruppe-computeralgebra.de/symbolicdata/buchliste/ with rdf
+source http://www.fachgruppe-computeralgebra.de/rdf/Buchliste-Alt.rdf is not up
+to date.  So it requires volunteers to update that information. The point is
+that the German Fachgruppe launched an internal project about CA books several
+years ago but did not manage to organize sustainably resources to collect such
+information in a broad scope. The continuation of many undertakings depends on
+the priorities of (changing) board members. But see
+http://www.fachgruppe-computeralgebra.de/publikationen/
