@@ -20,6 +20,9 @@ TITLE: The SymbolicData Project in a Computer Algebra Social Network
 Perspective. Some Architectural Considerations 
 AUTHORS: Hans-Gert Graebe
 
+OVERALL EVALUATION: 3 (strong accept)
+REVIEWER'S CONFIDENCE: 3 (medium)
+
 ----------- Review -----------
 
 This paper describes the evolving architecture and growth of the SymbolicData
@@ -54,6 +57,9 @@ TITLE: The SymbolicData Project in a Computer Algebra Social Network
 Perspective. Some Architectural Considerations 
 AUTHORS: Hans-Gert Graebe
 
+OVERALL EVALUATION: 1 (weak accept)
+REVIEWER'S CONFIDENCE: 3 (medium)
+
 ----------- Review -----------
 The paper aims to describe reorganization of SymbolicData store to incorporate
 new vision of how information should be acquired and stored.
@@ -73,6 +79,9 @@ PAPER: 15
 TITLE: The SymbolicData Project in a Computer Algebra Social Network
 Perspective. Some Architectural Considerations 
 AUTHORS: Hans-Gert Graebe
+
+OVERALL EVALUATION: -1 (weak reject)
+REVIEWER'S CONFIDENCE: 4 (high)
 
 ----------- Review -----------
 The paper discusses redesigning issues of the SymbolicData project and
@@ -95,6 +104,9 @@ PAPER: 15
 TITLE: The SymbolicData Project in a Computer Algebra Social Network
 Perspective. Some Architectural Considerations 
 AUTHORS: Hans-Gert Graebe
+
+OVERALL EVALUATION: -1 (weak reject)
+REVIEWER'S CONFIDENCE: 3 (medium)
 
 ----------- Review -----------
 The paper describes - amongst other things - the enlargement of the
