@@ -1,0 +1,314 @@
+%    Latex Template for ACA 2016
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    DO NOT CHANGE THE SETTINGS BELOW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{url}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    DO NOT CHANGE THE SETTINGS ABOVE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\vspace{-0.8cm}
+\begin{flushleft}
+\Large \textbf{\noindent
+%%% PLEASE INSERT THE TITLE OF YOUR TALK HERE %%%%%%%
+The \textsc{SymbolicData} Project -- a Community Driven Project for the CA
+Community}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{0.5cm}
+\normalsize
+ %%%%%%             NAMES OF AUTHORS         %%%%%%
+ %%%%%% NAME OF SPEAKER SHOULD BE UNDERLINED %%%%%%%%%
+\normalsize{
+ %%%%%% FOR EXAMPLE %%%%%
+ \underline{H.-G. Gr\"abe}
+ %%%%%%%%%%%%%%%%%%%%%%%%
+} \\
+\vspace{5mm}
+\textit{\footnotesize
+ %%%%%% AFFILIATION OF AUTHORS %%%%%%
+Leipzig University, Germany, graebe@informatik.uni-leipzig.de\\
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+\end{flushleft}
+\newcommand{\SD}{{\sc Symbo\-lic\-Data}}
+
+\section{Introduction}
+
+A central phenomenon of the emerging digital age is the increasing importance
+of a sustainably and reliably available \emph{digital interconnection
+  infrastructure} for many areas of every day life. This distinguishes the
+digital age from the computer age that focused on penetration of every day
+life with \emph{compute power} rather than interconnectedness.  With
+``ubiquitous computing'' such a penetration with compute power reached a high
+level of saturation, but is in no way at its end as is demonstrated by the
+development of modern sensor and actor systems as ``cyber-physical systems''
+and its applications within ``industry 4.0''. 
+
+During the last years the sensibility to the importance of investments also
+into a modern digital research infrastructure remarkably increased. It was
+continuously discussed on the ``big'' stage of research politics between
+different stakeholders, see e.g., \cite{h2020,esfri}.  The disposition to
+invest into the development of an appropriate digital infrastructure heavily
+depends on the visibility of the demand, whereas the demand develops with the
+productiveness of the available infrastructure -- a typical chicken-and-egg
+problem, that can only be addressed in the socio-technical context of a
+problem-aware community.  Such a community should have a good understanding of
+the importance of the advancement of its own research infrastructure and the
+ability to set up a socio-communicative process to coordinate the development
+of its own demands \emph{and} activities in the desired direction.
+
+Digital infrastructures are not only well suited to exchange research data and
+make it publicly available, but also proved valuable as technical basis of
+``social networks'' to promote such socio-communicative coordination processes.
+Nowadays in many cases different channels and means are used for these
+purposes, but it is due time to combine conceptually and also in practice both
+aspects of a research infrastructure.
+
+With the advancement of the {\SD} Project towards a Computer Algebra Social
+Network (CASN) we pursued such a concept in a specific context for several
+years.  We started to investigate questions of intra- and intercommunity
+communication in correlation with practical aspects of the community driven
+development of a decentrally organized, distributed semantic-aware digital
+research infrastructure within the specific research domain of \emph{symbolic
+  and algebraic computations} (CA) coarsely defined by the MSC 2010
+classification code 68W13 -- a medium sized scientific community, that splits
+into a number of subcommunities.  These CA subcommunities are organized around
+special research topics and in many cases already managed to organize and
+consolidate their own intracommunity digital research infrastructures.
+
+In our talk we address relevant questions, observations, and experience of our
+endeavor to develop and provide technical means to support the emergence of a
+digital research infrastructure on the intercommunity level.  We discuss
+lessons to be learned from these activities and hurdles and obstructions to
+generalize intracommunity experience to an intercommunity level within the CA
+domain.  
+
+We propose to deploy a special RDF-based architecture of \emph{CASN nodes}
+operated by different CA subcommunities and CA groups along the rules of the
+Linked Open Data Cloud \cite{lod}.  To ensure interoperability, this should be
+accompanied by a strong social intercommunity communication process to develop
+a common \emph{data architecture} of data models and its ontological standards
+of representation based on well established semantic web concepts and using
+standard semantic web technology.
+
+\section{The {\SD} Project as Community Project}
+The allocation of resources for a sustainably available research infrastructure
+seems to be a great challenge in particular to smaller scientific communities.
+The {\SD} Project witnesses the peaks and troughs of such efforts. It grew up
+from the Special Session on Benchmarking at the 1998 ISSAC conference in a
+situation where the research infrastructure built up within the PoSSo
+\cite{PoSSo} and FRISCO \cite{FRISCO} projects -- the Polynomial Systems
+Database -- was going to break down. After the end of the projects' fundings
+there was neither a commonly accepted process nor dedicated resources to keep
+the data in a reliable, concise, sustainably and digitally accessible way. Even
+within the ISSAC Special Session on Benchmarking the community could not agree
+upon a further roadmap to advance that matter.
+
+At those times almost 20 years ago most of the nowadays well established
+concepts and standards for storage and representation of research data did not
+yet exist -- even the first version of XML as a generic markup standard had to
+be accepted by the W3C. It was Olaf Bachmann and me who developed during
+1999--2002 with strong support by the Singular group concepts, tools and data
+structures for a structured representation and storage of this data and
+prepared about 500 instances from \emph{Polynomial Systems Solving} and
+\emph{Geometry Theorem Proving} to be available within this research
+infrastructure, see \cite{Bachmann2000}.
+
+The main conceptual goal was a nontechnical one -- to develop a research
+infrastructure that is independent of (permanent) project funding but operates
+based on overheads of its users. This approach was inspired by the rich
+experience of the Open Culture movement ``business models'' to run
+infrastructures.  During the last ten years with Open Access, Open Data and the
+emerging semantic web the general understanding of the importance of such
+community-based efforts to develop common research infrastructures matured.
+This development was accompanied with conceptual, technological and
+architectural standardization processes that had also impact on the development
+of concepts and data structures within the {\SD} Project.
+
+In 2009 we started to refactor the data along standard Semantic Web concepts
+based on the Resource Description Framework (RDF).  With {\SD} version~3
+released in September 2013 we completed a redesign of the data along RDF based
+semantic technologies, set up a Virtuoso based RDF triple store and an SPARQL
+endpoint as Open Data services along Linked Data standards \cite{lod}, and
+started both conceptual and practical work towards a semantic-aware Computer
+Algebra Social Network \cite{cicm-14}.
+
+In March 2016 version 3.1 of the {\SD} tools and data was released. On the
+level of research tools and data the new release contains new resource
+descriptions (``fingerprints'' in the notion of \cite{cicm-14}) of remotely
+available data on transitive groups (\emph{Database for Number Fields} of
+Gunter Malle and J\"urgen Kl\"uners \cite{MalleKlueners}) and polytopes
+(databases of Andreas Paffenholz \cite{Paffenholz} within the \emph{polymake}
+project \cite{polymake}), a recompiled and extended version of test sets from
+integer programming -- work by Tim R\"omer (\emph{normaliz} group
+\cite{normaliz}) -- and an extended version of the \emph{SDEval benchmarking
+  environment} -- work by Albert Heinle \cite{heinle-15}.
+
+The main development is coordinated within the \emph{{\SD} Core Team}
+(Hans-Gert Gr\"abe, Ralf Hemmecke, Albert Heinle) with direct access to our
+public github account \url{https://github.com/symbolicdata}.  We refer to the
+{\SD} Wiki \cite{sdwiki} for more details about the project and the new
+release.
+
+\section{The CA Community and its Subcommunities}
+
+During the last years the {\SD} Project adjusted its focus to address more
+general technical and social aspects of a semantically enriched research
+infrastructure within the domain of Computer Algebra based on RDF for
+representation of intercommunity and relational information.  Such a change of
+the focus had its impact on several earlier design decisions of the data store
+itself. 
+
+Enlarging the database of {\SD} we gained the following experience:
+\begin{itemize}
+\item The CA community consists of several subcommunities with own concepts,
+  notational conventions, semantic-aware tools and established communication
+  structures.  
+
+  There is no need to duplicate such structures but to support the
+  subcommunities to enrich semantically these communication processes.
+\item We provide structural metadata (``fingerprints'' in the notion of
+  \cite{cicm-14}) of the different data sets at our central RDF store but not
+  necessarily duplicate the data itself.
+
+  Thus we rely on sustainably available research infrastructures of CA
+  subcommunities and restrict our activities to a central search and filter
+  service on the metadata level to find and identify data. This service is
+  based on a generic semantic web concept, the SPARQL query language, and can
+  be operated via our SPARQL endpoint.
+\item RDF is a useful and meanwhile well established standard for metadata and
+  relational information, but there is no need and one cannot expect from CA
+  subcommunities to give up established notational conventions in favor of
+  RDF or XML markup for their primary sources. 
+\end{itemize}
+
+\section{About the CASN Architecture}
+
+The CASN subproject tries to embed aspects of the maintenance of the {\SD}
+data store into a more general process of formation of a semantically enriched
+social network of academic communication within the CA community in the sense
+of a (social) ``web of people''.
+
+A first roadmap towards such a CASN and our experimental setting was described
+in \cite{cicm-14} and developed further during the last years.  We try not to
+``reinvent the wheel'' but to address step by step the already existing ``CA
+memory'' -- a huge number of very loosely related web pages about conferences,
+meetings, working groups, projects, private and public repositories, private
+and public mailing lists etc. Hence the main focus towards CASN is to develop a
+framework based on modern semantic technologies for a decentralized network
+that increases the awareness of the different parts of that already existing
+``CA network''.
+
+We realized that this network itself is an ``overlay network'' that connects a
+greater number of research networks of individuals around special topics with
+own lightweight research infrastructures.  It is an interesting challenge for
+semantic concepts to support the requirements of intercommunity communication
+to exchange semantic content on different levels and different levels of
+detail.
+
+As a coarse architectural concept to establish such a network we propose
+\begin{itemize}
+\item to operate a central RDF store with SPARQL endpoint providing the full
+  bandwidth of Linked Open Data services and
+\item to convert nodes of the ``CA memory'' into CASN nodes providing part of
+  their data in structured RDF format for easy access and exchange.
+\end{itemize}
+{\SD} version 3.1 is a first step in that direction since several data from the
+formerly separate CASN RDF store are now integrated within the {\SD} main RDF
+store and the experimental setting of the semantic support of the website of
+the German Fachgruppe \cite{cafg} was reorganized as a first CASN node.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\raggedright
+\begin{thebibliography}{00}
+\addcontentsline{toc}{chapter}{References}
+\setlength{\itemsep}{-1mm}
+\footnotesize
+\bibitem{Bachmann2000} O. Bachmann, H.-G. Gr\"abe: The SymbolicData Project --
+  Towards an Electronic Repository of Tools and Data for Benchmarks of Computer
+  Algebra Software. Reports on Computer Algebra 27 (2000), Centre for Computer
+  Algebra, University of Kaiserslautern.
+\bibitem{normaliz} W. Bruns, B. Ichim, T. R\"omer, R. Sieg, C. S\"oger:
+  Normaliz.  Algorithms for Rational Cones and Affine Monoids.
+  \url{https://www.normaliz.uni-osnabrueck.de}. [2016-03-08]
+\bibitem{FRISCO} FRISCO -- A Framework for Integrated Symbolic/Numeric
+  Computation. (1996--1999).  \url{http://www.nag.co.uk/projects/FRISCO.html}.
+  [2016-02-19]
+\bibitem{polymake} E. Gawrilow, M. Joswig: Polymake: a Framework for Analyzing
+  Convex Polytopes. In: G. Kalai, G.M. Ziegler (eds.), Polytopes --
+  Combinatorics and Computation (Oberwolfach, 1997), pp. 43--73, DMV Sem., 29,
+  Birkh\"auser, Basel (2000).
+\bibitem{cicm-14} H.-G. Gr\"abe, S. Johanning, A. Nareike: The {\SD} Project --
+  Towards a Computer Algebra Social Network. In: Workshop and Work in Progress
+  Papers at CICM 2014, CEUR-WS.org, vol. 1186 (2014).
+\bibitem{heinle-15} A. Heinle, V. Levandovskyy: The SDEval Benchmarking
+  Toolkit. ACM Communications in Computer Algebra, vol. 49.1, pp. 1--10 (2015).
+\bibitem{MalleKlueners} J. Kl\"uners, G. Malle: A Database for Number Fields.
+  \url{http://galoisdb.math.uni-paderborn.de/}. [2016-03-08]
+\bibitem{lod} The Linked Open Data Cloud.  \url{http://lod-cloud.net/}.
+  [2016-05-20]
+\bibitem{Paffenholz} A. Paffenholz: Polytope Database.
+  \url{http://www.mathematik.tu-darmstadt.de/~paffenholz/data/}.  [2016-03-08]
+\bibitem{PoSSo} The PoSSo Project. Polynomial Systems Solving -- ESPRIT III BRA
+  6846.  (1992--1995).
+  \url{http://research.cs.ncl.ac.uk/cabernet/www.laas.research.ec.org/esp-syn/text/6846.html}. 
+      [2016-03-16]
+\bibitem{h2020} Research Infrastructures, including e-Infrastructures.
+  \url{http://ec.europa.eu/programmes/horizon2020/en/h2020-section/research-infrastructures-including-e-infrastructures}. [2016-03-16]
+\bibitem{esfri} Strategy Report on Research Infrastructures.  Roadmap 2016.
+  Published by the European Strategy Forum for Research Infrastructures
+  (ESFRI), Br\"ussel (2016).  \url{http://www.esfri.eu/roadmap-2016}.
+  [2016-03-16]
+\bibitem{sdwiki} The {\SD} Project.  \url{http://wiki.symbolicdata.org}.
+  [2016-05-20]
+\bibitem{cafg} Website of the German Fachgruppe Computeralgebra.   
+  \url{http://www.fachgruppe-computeralgebra.de/}. [2016-03-06]
+\end{thebibliography}
+
+\end{document}
+
+Use this format (without changing the settings) to prepare your abstract. The
+abstracts are used for evaluation purposes. Therefore, it is important that you
+describe your intended presentation concisely and clearly, including the
+objectives, status, methodology, results, and significance of your study.
+
+The extended abstract length is limited to 5  pages.  Equations are to be centered horizontally, with equation numbers aligned with the right margin.  Paragraph text is full-justified.  Do not explicitly begin by writing the word ``abstract''.  Equations should be properly punctuated.  For instance, as
+\begin{equation}
+y=3x^2\  \  \  \mbox{and}\  \  \  x>0, \label{eq1}
+\end{equation}
+we see that
+\begin{equation}
+z=\sqrt{y}=\sqrt{3}x. \label{eq2}
+\end{equation}
+
+%\begin{eqnarray}
+%\lim_{x \to +\infty} {\rm Abstract}(x) = 1\ {\rm page}.
+%\label{eq1}
+%\end{eqnarray}
+
+
+Your abstract should be prepared in \LaTeX\ according to the template provided
+and then \textbf{converted to PDF for submission.}   Abstracts not complying
+with this template may not be included in the book of abstracts of the ACA
+2015. Abstract submission should be done  via the session organizers, they will
+confirm your submission. If your abstract is accepted, you will be invited to
+present your talk.
+
+The book of abstracts will be available to the participants prior to the
+conference and will provide the audience with more information about the papers
+being presented at the ACA 2015 Workshop. At least one author must be
+registered for your talk to be included in the program of the conference.
