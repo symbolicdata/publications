@@ -1,0 +1,405 @@
+\documentclass{beamer}
+\usepackage[english]{babel}
+% Designelemente
+\usetheme{Hannover}
+\beamertemplatenavigationsymbolsempty
+
+\newenvironment{code}{\small\tt \begin{tabbing}
+\hskip12pt\=\hskip12pt\=\hskip12pt\=\hskip12pt\=\hskip5cm\=\hskip5cm\=\kill}
+{\end{tabbing}}
+
+\title[Semantic-aware Fingerprints]{Semantic-aware Fingerprints\\ of Symbolic
+  Research Data} 
+
+\author{Hans-Gert Gr\"abe}
+
+\institute[]{Leipzig University, Germany\\
+\texttt{http://bis.informatik.uni-leipzig.de/HansGertGraebe}}
+
+\date{ICMS-2016, Berlin, 2016-07-13}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Introductory Remarks}
+\begin{itemize}
+\item \emph{Information Services for Mathematics} addresses a more complex
+  target compared to \emph{Mathematical Software}.
+\item Mathematical software is only part of a whole \emph{infrastructure for
+  mathematical research} that nowadays goes much beyond the classically hawked
+  \emph{paper and pencil} or \emph{chalk and blackboard}.
+\item The themes \emph{software, services, models, and data} point to at least
+  four dimensions to enhance the mathematical research infrastructure in the
+  era of ubiquitous computing and increasingly important digital
+  interconnectedness within the Digital Universe (DU).
+\end{itemize}
+\end{frame}
+
+\section{Real World and Digital Universe}
+\begin{frame}
+\frametitle{Real World (RW) and Digital Universe (DU)}
+\begin{itemize}
+\item[(D1)] RW: Real world \emph{tasks} -- \emph{Resources} in the RDF
+  terminology.
+
+  A \textbf{task} is a real world \emph{process} with a \emph{goal} triggered
+  by \emph{interested} people.
+\item[(D2)] DU: Associated task related \emph{descriptions}.  
+
+  Requires \emph{pointers} to RW task details, i.e., \textbf{digital
+    identities} (DI) as URIs (unique resource identifiers) in the most
+  formalized way required to be processed by computers.
+\item [(D3a)] DU: Many descriptions relate to the same RW task. 
+
+  \emph{Problem:} Match related DIs in communication. 
+\item [(D3b)] DU: Many descriptions relate different RW task. 
+
+  \emph{Problem:} Express such relations as relations between DIs in the DU. 
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Real World and Digital Universe}
+
+RDF -- the \emph{Resource Description Framework} -- with its models, standards,
+protocols and web architecture is nowadays an established standard to process
+such problems on a technical level. Together with the \emph{Open Culture
+  Paradigm} it is the basis for the ever growing \emph{Linked Open Data
+  Cloud} (LOD). 
+
+Links:
+\begin{itemize}\itemsep0pt
+\item \url{https://www.w3.org/RDF/}
+\item \url{http://www.w3.org/standards/techs/rdf}
+\item \url{http://lod-cloud.net/}
+\end{itemize}
+
+\begin{itemize}
+\item[(D4)] RW: The digitally supported social communication processes about
+  relations between DIs in the DU should have \emph{impact on the RW
+    performance of coupled tasks} within a cooperative environment.
+\end{itemize}
+\end{frame}
+
+\section{Information Services for Mathematics}
+\begin{frame}
+\frametitle{Information Services for Mathematics}
+Information Services for Mathematics have to address at least four dimensions:
+\medskip
+\begin{itemize}
+\item[(I1)] \emph{Research Data} -- papers, conference announcements, mailing
+  lists, web sites {\ldots} (data streams).\vskip1em
+  \begin{small}
+    Although it seems to be completely within the DU, it is a good advice to
+    differentiate between \emph{resources} (D1) -- as rather a part of the RW
+    -- and \emph{resource descriptions} (D2). \vskip1em
+
+    Resource descriptions are required to \emph{structure} resources for search
+    and filter processes (D3b). RDF is best suited for such a task.
+  \end{small}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Information Services for Mathematics}
+\begin{itemize}
+\item[(I2)] \emph{Research Input Data} -- well curated publicly available data
+  stocks with data relevant for a whole research community (data stores).
+  \vskip1em
+  \begin{small}
+    This is a new phenomenon within the upcoming DU with great impact on
+    research problems, research methods and research paradigms, in particular
+    within the \emph{digital humanities}. \vskip1em
+
+    Important for the coherence of research questions addressed by the
+    community and thus for the formation of a specific research community
+    itself around its central research problems.
+  \end{small}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Information Services for Mathematics}
+\begin{itemize}
+\item[(I3)] \emph{Mathematical Software} -- written to run computer
+  simulations.  \vskip1em
+  \begin{scriptsize}
+    If software is not used in such a way it is of less academic interest.
+    Moreover, computer simulations often require the interplay of several
+    \emph{scientific packages} bundled within an \emph{application}, hence we
+    propose to use \emph{computer simulation} as the broader notion.  \vskip1em
+
+    Note that computer simulation (as a special kind of ``experiment'') relates
+    to an epistemological dimension not covered by (D1--D3) above. \vskip1em
+
+    The public availability of newly developed \emph{simulation methods,
+      procedures and techniques} is relevant for the traceability of the
+    proposed scientific approaches and increasingly accompanies classical forms
+    of description of scientific advancement by academic papers. \vskip1em
+  \end{scriptsize}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Information Services for Mathematics}
+\begin{itemize}
+\item[(I4)] Public available \emph{output data} -- important for the
+  independent reproduction of results and thus of essential importance for the
+  process of academic quality assurance.  \vskip1em
+  \begin{small}
+    Output data is the starting point for new research questions and thus
+    output data mutates to input data.\vskip1em
+
+    In most of the cases such a mutation is mediated by a community-internal
+    interpersonal transformation process that transforms the often large output
+    data (or a whole bundle of such data) into (one or several) more compact
+    input data adapted to the new research question(s).\vskip1em
+  \end{small}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Information Services for Mathematics}
+
+Efforts to secure a research infrastructure for mathematical data at large at
+the level (I2) or even (I4) are lost in the brushwood of everlasting (for at
+least a decade) debates about reliable formal but semantically expressive
+formats as MathML or OpenMath for data resulting from calculi, that are already
+highly formalized -- at least at an informal level -- by the internal nature of
+the research topics themselves.  \vskip1em
+
+The situation reminds the Tower of Babel Project, since subcommunities are
+digitally already well established, developed their own formalizations for
+their own research data at (I2) level and apply such formalizations very
+successful within their intracommunity communication processes.
+\end{frame}
+
+\begin{frame}\frametitle{The SymbolicData Project}
+The SymbolicData Project 
+\begin{itemize}
+\item[(S1)] is an inter-community project with roots in the activities of
+  different Computer Algebra Communities to develop concepts and tools for
+  profiling, testing and benchmarking Computer Algebra Software (CAS) -- level
+  (I2),
+\item[(S2)] aims at interlinking these and other scientific activities between
+  different subcommunities of the CA community using modern Semantic Web
+  concepts -- tasks (D3a) and (D3b) and
+\item[(S3)] during the last years concentrated efforts to set up the technical
+  basis for a \emph{CA Social Network infrastructure} within the Linked Open
+  Data Cloud -- level (I1).
+\end{itemize}
+\end{frame}
+
+\section{Fingerprints}
+\begin{frame}\frametitle{Research Data and Metadata}
+  \begin{itemize}
+  \item For management, search and filter functionality research data is
+    usually enriched with \emph{metadata} that collect important relevant
+    information of the individual data records in a compact manner.\vskip.5em
+
+    We denote such metadata for an individual data record as its
+    \emph{fingerprint}.
+  \item Similar to a \emph{hash function} a fingerprint function computes a
+    compact metadata record (\emph{resource description} in the RDF
+    terminology) to each individual data record (\emph{resource} in the RDF
+    terminology).
+  \item As with a hash function one can use the fingerprints to distinguish
+    different data records within the given collection and to match new records
+    with given ones.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Research Data and Metadata}
+  \begin{itemize}
+  \item There is an essential difference between (classical) hash functions and
+    well designed fingerprints: fingerprint functions exploit not only the
+    textual representation of the data record as meaningless syntactical
+    character string but convey \emph{semantically important information} or
+    even compute such information from the string representation.
+  \item Fingerprints are in this sense \emph{semantic-aware} and can even be
+    designed in such a way that they map ambiguities in the textual
+    representation of records (e.g., polynomial systems given in different
+    polynomial orders and even in different variable sets) to \emph{semantic
+      invariants}.
+  \item The design of appropriate fingerprint signatures is an important
+    \emph{intracommunity} activity to structure its own research data
+    collections.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Research Data and Metadata}
+  \begin{itemize}
+  \item Such fingerprint signatures are also very useful for the
+    \emph{intercommunity} usage of research data collections, since they allow
+    to navigate within the (foreign) research data collection without
+    presupposing the full knowledge of the ``general nonsense'' of the target
+    research domain, i.e., the informal background knowledge required freely to
+    navigate as scientist in that domain.
+  \item Hence well designed fingerprint signatures are to be considered also as
+    a first class service of a special research community to a wider audience
+    to inspect their research data collections without using the
+    community-internal tools to access the resources themselves.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Example}
+Fingerprints for ideals in polynomial rings:
+\begin{code}
+  <http://symbolicdata.org/Data/Ideal/Gerdt-93a> ...\+\\
+sd:hasDegreeList "2,3,4" ;\\
+sd:hasLengthsList "3,3,4" ;\\
+sd:relatedPolynomialSystem\\\>\> 
+<http://symbolicdata.org/Data/IntPS/Gerdt-93a> ;\\
+a sd:Ideal .
+\end{code}
+Polynomial systems and ideals -- the semantic complexity of a seemingly easy
+question.\vskip1em
+
+Fingerprints are usually stored together with the resource itself (as for
+polytopes in \emph{polymake}, contribution by A. Paffenholz, and for integer
+programming examples in \emph{normaliz}, contribution by Tim R\"omer) or within
+a database (transitive groups by Kl\"uners and Malle).   
+\end{frame}
+
+\begin{frame}\frametitle{Fingerprints and the LOD}
+For navigational and filter tasks it is necessary to extract fingerprints into
+a common database.  Best practice uses an RDF representation to integrate that
+information into the Linked Open Data Cloud and to offer SPARQL querying the
+metadata. \vskip1em
+
+Example SPARQL query for polynomial systems:
+\begin{code}\small
+PREFIX sd: <http://symbolicdata.org/Data/Model\#>\\
+select ?a\\
+from <http://symbolicdata.org/Data/PolynomialSystems/>\\
+where \{\\
+?a a sd:Ideal .\\
+?a sd:hasDegreeList "2,3,4" . \}
+\end{code}
+\end{frame}
+
+\begin{frame}\frametitle{Fingerprints and the LOD}
+During the last years the SymbolicData Project concentrated on collecting such
+fingerprint information from different CA sources -- the research data are
+maintained by the subcommunity, the fingerprints allow for easy navigation
+within that data.\vskip1em
+
+\emph{Different approach:} Direct integration of the resources themselves into
+a general software system as, e.g., SageMath. Drawbacks: Restricted search
+functionality, no direct integration into the Linked Open Data Cloud possible.
+
+\end{frame}
+
+\section{The SymbolicData Project}
+\begin{frame}\frametitle{The SymbolicData Project}
+The SymbolicData provides \bigskip
+
+\textbf{Data and Fingerprints:}
+\begin{itemize}
+\item Polynomial Systems Solving
+\item Geometry Theorem Proving
+\item Free Algebras
+\item G-Algebras
+\end{itemize}\bigskip
+\textbf{Fingerprints:}
+\begin{itemize}
+\item Test Sets from Integer Programming (T. R\"omer)
+\item Fano Polytopes (A. Paffenholz)
+\item Birkhoff Polytopes (A. Paffenholz)
+\item Transitive Groups (J. Kl\"uners, G. Malle)
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{The SymbolicData Project}
+\textbf{Tools:}\bigskip
+
+SDEval Package (Albert Heinle)
+\begin{itemize}\small
+\item Aim: Set up, run, log, monitor standardized Computations on SD data
+  series in a reliable way 
+\item Technology: Python standalone on top of the OS
+\item \url{http://wiki.symbolicdata.org/SDEval}
+\end{itemize}
+SDSage Package (Andreas Nareike)
+\begin{itemize}\small
+\item Aim: Call the new Polynomial Systems format from SageMath 
+\item Technology: SageMath Python Package
+\item \url{http://wiki.symbolicdata.org/PolynomialSystems.Sage}
+\end{itemize}\vfill
+Tools and data are designed to be used both on a local site for special testing
+and profiling purposes to manage a central repository at
+  \texttt{http://www.symbolicdata.org}
+\end{frame}
+
+\begin{frame}\frametitle{SymbolicData Infrastructure}
+\begin{itemize}
+\item Github organizational account \url{http://github.com/symbolicdata}
+\item A project wiki at \url{http://symbolicdata.org}
+\item A mailing list
+\item Web access to the XML resources
+\item A centrally operated Virtuoso based RDF data store for meta data
+\item Organized along Linked Data Principles
+\item Regular dumps of RDF data in Turtle format
+\item A SPARQL endpoints to query the data
+\item Advise for local installation of tools and data based on Virtuoso and a
+  local Apache Web server
+\end{itemize}
+\end{frame}
+
+\section{Towards a CA Social Network}
+\begin{frame}\frametitle{Towards a CA Social Network}
+
+During the last years we consolidated the following infrastructure:
+\begin{itemize}
+\item We collect, update, and serve relevant information about CA people,
+  upcoming and past CA conferences through our central RDF store.
+\item We set up local CASN nodes at
+  \begin{itemize}
+  \item \url{http://symbolicdata.org/rdf}
+  \item \url{http://fachgruppe-computeralgebra.org/rdf}
+  \end{itemize}
+  with more information in Linked Open Data format as best practices.
+\item We operate \url{http://symbolicdata.org/info} as example how to integrate
+  such information into local web pages, see also
+  \begin{center}\small
+    \url{http://fachgruppe-computeralgebra.org/symbolicdata}
+  \end{center}
+\end{itemize}
+
+\end{frame}
+
+\section{Links}
+\begin{frame}\frametitle{Links}
+\begin{itemize}
+\item \texttt{http://wiki.symbolicdata.org} -- the SD Wiki
+\item \texttt{http://symbolicdata.org/XMLResources} -- the SD XML Resources
+\item \texttt{http://symbolicdata.org/RDFData} -- the SD RDF Data Turtle Files
+\item \texttt{http://symbolicdata.org/Data} -- the SD OntoWiki view on the
+  RDF data, including the CASN data
+\item \texttt{https://github.com/symbolicdata} -- the SD organizational github
+  account with several git repos
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+\section{RDF -- Basic Concepts}
+\begin{frame}\frametitle{RDF and Linked Data Principles}
+\begin{itemize}
+\item RDF = Resource Description Framework
+\begin{itemize}\small
+\item Main idea: Store pieces of information in a unified way as triples,
+  use standard tools to manage these data.
+\end{itemize}
+\item \emph{Resources:} URI, HTTP access
+\begin{itemize}\small
+\item URI = Unique Resource Identifier
+\item Access to worldwide distributed data in a unified way
+\end{itemize}
+\item \emph{Resource Descriptions:} Deliver a valuable piece of information in
+  structured RDF format, that can be combined with other pieces of information
+  from other sources into new RDF sentences.
+\item Run \emph{RDF Triple Stores} as part of a worldwide distributed data
+  storage infrastructure
+\item (Federated) Query Language SPARQL
+\item Run \emph{SPARQL Endpoints} on RDF triple stores
+\end{itemize}
+\end{frame}
