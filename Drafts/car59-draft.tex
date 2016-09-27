@@ -11,7 +11,7 @@
   Perspective}
 
 \author{Hans-Gert Gr\"abe, Leipzig}
-\date{Version of Sept. 25, 2016}
+\date{Version of Sept. 27, 2016}
 
 \begin{document}
 \maketitle
@@ -26,24 +26,21 @@ Algebra Social Network (CASN) part.
 
 In March 2016, we released {\SD} version 3.1 including
 \begin{itemize}
-\item new data from
-different Computer Algebra (CA)
-subcommunities,
+\item new data from different Computer Algebra (CA) subcommunities,
 \item a reorganized git repository structure,
-\item close integration of the CASN
-part into the main project and
-\item a set of examples based on the \emph{EasyRDF}
-PHP library and the Bootstrap web framework to show how to set up web
-presentations of the data in a very simple way.
+\item close integration of the CASN part into the main project and
+\item a set of examples based on the \emph{EasyRDF} PHP library and the
+  Bootstrap web framework to show how to set up web presentations of the data
+  in a very simple way.
 \end{itemize}
 
 The focus of the {\SD} project moved from a project mainly centered around
 activities of the German CA Fachgruppe to a broader international scope. This
 opening started with a presentation of the project in the Work in Progress
-section of the 2014 CICM conference. It was furthermore discussed with the SIGSAM chair at
-the ACA 2015 conference in Kalamata, where {\emph{Hans-Gert Gr\"abe}} gave a
-presentation in combination with a hands on session on {\SD}\footnote{see our publications and
-presentations overview at
+section of the 2014 CICM conference. It was furthermore discussed with the
+SIGSAM chair at the ACA 2015 conference in Kalamata, where {\emph{Hans-Gert
+    Gr\"abe}} gave a presentation in combination with a hands on session on
+{\SD}\footnote{see our publications and presentations overview at
   \url{http://wiki.symbolicdata.org/Publications} for more details}.  The
 contacts were deepened by \emph{Albert Heinle} and \emph{Victor Levandovskyy}
 with a paper \cite{heinle-15} about the SDEval framework in the \emph{ACM
@@ -109,30 +106,24 @@ corresponding data record within the remotely maintained research data store
 provided by the respective CA subcommunity.
 
 As main advantage such separated metadata can be queried in a common, uniform
-and well established way using the SPARQL query language. This is another W3C web
-standard with many tools and concepts, which were mainly developed for a performant management of
-big data given in the RDF semantic web format and for integration with other
-applications. 
+and well established way using the SPARQL query language. This is another W3C
+web standard with many tools and concepts, which were mainly developed for a
+performant management of big data given in the RDF semantic web format and for
+integration with other applications.
 
 SPARQL plays a similar role for querying the worldwide distributed and
 interlinked semantic web data store as SQL plays for querying local databases.
-
-\textbf{COMMENT-ALBERT: I don't understand what the purpose of the
-  following paragraph is:}
-Since this is in the first plan a technical question we don't go into details
-here but refer to our wiki\footnote{
-  \url{http://wiki.symbolicdata.org/MoreQueries}} for more background and some
-example queries.  Using that technology one can navigate within such data,
-restructure it for efficient search or identify a given example within the
-database.
+Using that technology one can navigate within such data, restructure it for
+efficient search or identify a given example within the database.  We refer to
+our wiki\footnote{See, e.g., \url{http://wiki.symbolicdata.org/MoreQueries}.}
+for more background and some example queries.
 
 \subsection{Transforming Test Sets into the Normaliz Format}
 
 In a similar way, we transformed and enlarged the data on integer programming --
-the {\SD} Test Sets collection. \textbf{COMMENT-ALBERT: Either
-  emphasize ``Test Sets'' in some way or put it lowercase}
+the {\SD} test sets collection. 
 
-The old {\SD} Test Sets collection was compiled by \emph{Raymond Hemmecke}
+The old {\SD} test sets collection was compiled by \emph{Raymond Hemmecke}
 several years ago along the former {\SD} rules -- develop a data model, an
 XML-binding for data storage to represent this special data type, and an RDF
 ontology for metadata (fingerprints and maintenance information).
@@ -150,30 +141,29 @@ using a common software the data are stored and exchanged in just that format.
 Hence for such a subcommunity (as, e.g., the polytope subcommunity around
 \emph{polymake} or the integer programming subcommunity around \emph{Normaliz})
 there is no need to develop another standard for data exchange -- such a
-standard would hardly be accepted.  Note that the situation is different
-within the polynomial systems solving subcommunity since there exist several
-major software systems with different input formats, as \emph{Singular},
-\emph{Macaulay2}, \emph{Magma}, \emph{GB} or \emph{CoCoA} -- to name only the most important
-ones.
+standard would hardly be accepted.  Note that the situation is different within
+the polynomial systems solving subcommunity since there exist several major
+software systems with different input formats, as \emph{Singular},
+\emph{Macaulay2}, \emph{Magma}, \emph{GB} or \emph{CoCoA} -- to name only the
+most important ones.
 
-For the new Test Sets collection we use and store data in the \emph{Normaliz}
+For the new test sets collection we use and store data in the \emph{Normaliz}
 exchange format and thus prepared the data in a similar way as for polytopes
-and transitive groups. This work was done by \emph{Tim R\"omer} who
-transformed also the ``legacy'' Test Sets into the new format.  All
-content written in
-the old format was cleaned up from the repos and the web pages were adjusted.
+and transitive groups. This work was done by \emph{Tim R\"omer} who transformed
+also the ``legacy'' test sets into the new format.  All content written in the
+old format was cleaned up from the repos and the web pages were adjusted.
 
 \section{Towards a Computer Algebra Social Network}
 
 \subsection{Motivation}
 
-All parties want to have a powerful digital research infrastructure,
-but they are rarely willing or able to invest in it.  It is a complex social
-challenge to organize active goal-oriented cooperation in such an area outside
-of the scientific reputation process. We learned over the years not only to
+All parties want to have a powerful digital research infrastructure, but they
+are rarely willing or able to invest in it.  It is a complex social challenge
+to organize active goal-oriented cooperation in such an area outside of the
+scientific reputation process. We learned over the years not only to
 concentrate on the collection of scientific \emph{data} but also on structured
 and semantically enriched information about the scientific and social
-\emph{processes} to produce this data.  
+\emph{processes} to produce this data.
 
 Several years ago the {\SD} Project extended its scope to analyze and support
 the exchange of such information in a structured way.  Our vision is a
@@ -181,19 +171,19 @@ distributed and tool based network of semantic aware nodes corresponding to the
 (small and big) nodes of the real CA research network.  Such a \emph{Computer
   Algebra Social Network} (CASN) should be a semantically enriched digital
 infrastructure for a social network of scientific research and scientific
-researchers within the Computer Algebra community and its several subcommunities
-similar to other social networks as, e.g., Facebook.  
+researchers within the Computer Algebra community and its several
+subcommunities similar to other social networks as, e.g., Facebook.
 
-Note that the starting point for such a CASN is  at least in two ways different
+Note that the starting point for such a CASN is at least in two ways different
 from the Facebook starting point. First, there is no Mark Zuckerberg nor such
 an amount of money to push the project. Second, there is already a digital ``CA
 memory'' -- a huge number of very loosely related web pages about conferences,
 meetings, working groups, projects, private and public repositories, private
 and public mailing lists etc. The CASN design has to take such a diversity into
 consideration and develop a decentralized solution based on modern semantic
-technologies. This solution must increase the awareness of the different parts of the
-already existing ``CA network'' and support the \emph{exploration} of that
-network to get useful deep results in an easy manner.
+technologies. This solution must increase the awareness of the different parts
+of the already existing ``CA network'' and support the \emph{exploration} of
+that network to get useful deep results in an easy manner.
 
 \subsection{CASN Nodes}
 
@@ -209,7 +199,7 @@ resolutions, qualities, and so forth, \emph{exploration} becomes an additional
 As a first step towards a digital network within the CA community capable
 to \emph{explore} social and scientific relations
 \begin{itemize}
-\item we operate the RDF based {\SD} main data stored together with its SPARQL
+\item we operate the RDF based {\SD} main data store together with its SPARQL
   endpoint \cite{sdsparql} to query centrally maintained data and
 \item propose to convert other nodes of the ``CA memory'' into CASN nodes that
   provide part of their data in structured RDF format.
@@ -224,10 +214,10 @@ divided in a wide scope between data providers and data consumers.
 In a first version such a node can be merely a directory with valuable RDF
 files publicly accessible in the web as provided by the CASN sample
 node\footnote{ \url{http://symbolicdata.org/rdf/}} of the {\SD} Project. As
-proof of concept, we provide detailed
-information about five CA conferences  in the subdirectory \texttt{Conferences} using the (meanwhile outdated)
+proof of concept, we provide detailed information about five CA conferences in
+the subdirectory \texttt{Conferences} using the (meanwhile outdated)
 \emph{Semantic Web Conference Ontology}\footnote{
-  \url{http://data.semanticweb.org/ns/swc/swc_2009-05-09.html}}. 
+  \url{http://data.semanticweb.org/ns/swc/swc_2009-05-09.html}}.
 
 The CASN node of the German CA Fachgruppe\footnote{
   \url{http://www.fachgruppe-computeralgebra.de/rdf/}} is designed along a more
@@ -252,8 +242,7 @@ As another service within the CASN we maintain a list of \emph{Upcoming
   Conferences}.  The data about conferences is extracted from several sources,
 transformed into RDF format and delivered by our main SPARQL endpoint
 \cite{sdsparql}.  This information is used by the German CA Fachgruppe on one
-hand to present an online list of upcoming conferences and on the
-other hand to
+hand to present an online list of upcoming conferences and on the other hand to
 generate the conference announcement section of the printed version of their CA
 Rundbrief.  The RDF database contains more advanced information about
 conferences as, e.g., submission deadlines or program committees.
@@ -274,8 +263,8 @@ for additional information.
 
 The concept of the Unique Resource Identifier (URI) as part of the RDF standard
 provides a generic way to disambiguate people and artifacts.  More precisely,
-each such URI, considered as \emph{digital identity}, is the entry point from the
-real world to the digital universe, and any statement within the digital
+each such URI, considered as \emph{digital identity}, is the entry point from
+the real world to the digital universe, and any statement within the digital
 universe can be followed and traced back using digital technology only up to
 such (combinations of) URIs. URIs are bound to real world entities by more
 complex socio-political and technical ``agreements''. To shape politically such
