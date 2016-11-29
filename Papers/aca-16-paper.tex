@@ -20,7 +20,7 @@
 
 \subjclass{Primary 68W30}
 \keywords{symbolic data, research infrastructure, research social web}
-\date{November 28, 2016}
+\date{November 29, 2016}
 
 \begin{abstract}
   The development of digital research infrastructures is a big challenge in
@@ -51,7 +51,7 @@ life with \emph{compute power} rather than interconnectedness.  With
 ``ubiquitous computing'' such a penetration with compute power reached a high
 level of saturation, but is in no way at its end as is demonstrated by the
 development of modern sensor and actor systems as ``cyber-physical systems''
-and its applications within ``industry 4.0''. 
+and its application within ``industry 4.0''. 
 
 During the last years the sensibility to the importance of investments also
 into a modern digital research infrastructure remarkably increased. It was
@@ -113,7 +113,7 @@ Linked Open Data Cloud \cite{lod} and already set up two such nodes at
   in particular about articles published in their „Computeralgebra Rundbrief“.  
 \end{itemize}
 Such a distributed infrastructure complements the centrally managed {\SD }
-infrastructure:
+infrastructure consisting of
 \begin{itemize}
 \item our \emph{github repos} \cite{sdrepo} with RDF data dumps, code of our
   tools, and best practice examples,
@@ -123,21 +123,21 @@ infrastructure:
 \item a wiki \cite{sdwiki} with detailed additional information about our
   project. 
 \end{itemize}
-To ensure interoperability, this should be accompanied by a strong social
-intercommunity communication process to develop a common \emph{data
-  architecture} of data models and its ontological standards of representation
-based on well established semantic web concepts and using standard semantic web
-technology.
+To ensure interoperability, this technical development process should be
+accompanied by a strong social intercommunity communication process to agree
+upon a common \emph{data architecture} of data models and its ontological
+standards of representation based on well established semantic web concepts and
+using standard semantic web technology.
 
 \section{The {\SD} Database}
 
 The {\SD} Project took its origin from the polynomial systems solving
 subcommunity and early extended its scope to geometry theorem proving and
-Integer Programming as two of the major application areas of polynomial systems
+integer programming as two of the major application areas of polynomial systems
 solving at that time. We refer to \cite{cicm-14} for a more detailed overview
 of the goal, aims, concepts and history of the {\SD} Project.
 
-In \cite{car-55} we described in more detail the data modelling and RDF
+In \cite{car-55} we gave a detailed overview of the data modelling and RDF
 bindings for polynomial systems and polynomial ideals data and metadata.
 Currently the {\SD} data collection contains 390 records and 633 configurations
 from the areas of polynomial systems solving, 83 free algebra records, 8
@@ -151,7 +151,7 @@ Description Framework is about \emph{description} of \emph{resources},
 represented by (globally unique) \emph{resource identifiers} (URIs). It is best
 Linked Data practise to provide URIs in such a way, that they are accessible by
 the HTTP internet protocol and a valuable part of structured information about
-that resource is delivered upon HTTP request to that URI.
+the resource is delivered upon HTTP request to that URI.
 
 Note that the distinction between \emph{resources} (managed by CA
 subcommunities using intracommunity standard methods of representation and
@@ -159,27 +159,30 @@ access) and \emph{resource descriptions} (important for technically supported
 interchange between such subcommunities and for intercommunity communication)
 leads away from XML based design principles that mainly focus on the
 distinction between information (XML records) and information structure
-(described with XSchema).  XML-based storage formats was one of the design
-decisions within earlier {\SD} versions.  In our new version we offer a greater
-variety of storage formats for research data and shift the focus from the data
-format to the provision of a \emph{semantic aware parser} component that can be
-integrated with other tools.  This gives CA subcommunities more freedom to
-provide their well maintained and curated data for intercommunity use.  Within
-the {\SD} project we concentrate on the extraction and management of
-\emph{metadata}.  
+(described with XSchema).  To use XML-based storage formats was one of the
+design decisions within earlier {\SD} versions.  In our new version we offer a
+greater variety of storage formats for research data and shift the focus from
+the data format to the provision of a \emph{semantic aware parser} component
+that can be integrated with other tools.  This gives CA subcommunities more
+freedom to provide their well maintained and curated data for intercommunity
+use.  Within the {\SD} project we concentrate on the extraction and management
+of \emph{metadata}.
 
-Currently the {\SD} database contains metadata of 8630 Fano polytope records
-\cite{fano} and 5399 Birkhoff polytope records \cite{birkhoff} from the
+Thus the {\SD} database was enlarged with metadata of 8630 Fano polytope
+records \cite{fano} and 5399 Birkhoff polytope records \cite{birkhoff} from the
 polymake project \cite{polymake} hosted by Andreas Paffenholz, 3605 transitive
-group records from the Database for Number Fields \cite{MalleKlueners} of
+group records from the Database for Number Fields \cite{MalleKlueners} by 
 J\"urgen Kl\"uners and Gunter Malle and 49 test set records from the Normaliz
 collection \cite{normaliz}.
 
 \section{Querying the Database -- Two Examples}
 
-Let's demonstrate the search and filter facility on the metadata of two
-different collections by two examples\footnote{See also
-  \url{http://wiki.symbolicdata.org/MoreQueries}.}.
+Representation of metadata in RDF format together with the SPARQL querying
+language are well suited to explore data and nowadays even emerged to a certain
+standard within the Linked Data world. Let's demonstrate the search and filter
+facility on the metadata of two different collections by two
+examples\footnote{See also \url{http://wiki.symbolicdata.org/MoreQueries}.}.
+We assume the reader to be familiar with RDF and SPARQL basics. 
 
 \paragraph{Example 1:}
 This is an example from the Fano polytope metadata. The following listing in
@@ -188,7 +191,7 @@ RDF Turtle notation with our special name space
   sd: <http://symbolicdata.org/Data/Model\#>
 \end{quote}
 for the {\SD} model elements (classes and predicates) describes a typical Fano
-polytope metadata entry:
+polytope metadata record:
 \begin{code}
   <http://symbolicdata.org/Data/FanoPolytope/F.3D.0001>\+\\
   a sd:FanoPolytope ;\\
@@ -212,35 +215,37 @@ polytope metadata entry:
   sd:n\_lattice\_points {\dq}34{\dq}{\xsdprefix}xsd:integer ;\\
   sd:n\_boundary\_lattice\_points {\dq}33{\dq}{\xsdprefix}xsd:integer .
 \end{code}
-The example is taken from the \texttt{fano-v3d.tgz} collection of 3-dimensional
-Fano polytopes by Andreas Paffenholz \cite{fano}. The collection itself is a
-single tgz-file and is provided for download from the URL given as second
-entry.  The third entry provides the file name of the core data of the given
-example within that collection.
+The example belongs to the \texttt{fano-v3d.tgz} collection of 3-dimensional
+Fano polytopes by Andreas Paffenholz \cite{fano}. The collection itself is
+contained in a single tgz-file and is provided for download from the URL given
+as second entry in the above listing.  The third entry provides the file name
+of the core data of the given example within that collection.
 
-All other lines contain metadata information about the given example.  We apply
-the golden rule of \emph{self-explanatory identifiers} to associate semantic
-meaning with syntactic predicate names as recommended within the RDF world.
-This helps the ``semantic aware user'' to understand the given metadata record
-without further elaboration. RDF provides means to describe semantics of
-predicates in more detail, see our wiki \cite{sdwiki}.
+All other lines contain numerical or boolean metadata information about the
+given example.  We apply the golden rule of \emph{self-explanatory identifiers}
+to associate semantic meaning with syntactic predicate names as recommended
+within the RDF world.  This helps the ``semantic aware user'' to understand the
+given metadata record without further elaboration. Note that RDF provides means
+to describe semantics of predicates in more detail and we provide such
+additional information, see our wiki \cite{sdwiki}.
 
-This metadata was extracted from the source file, transformed into RDF notation
-and stored as metadata record in the \texttt{FanoPolytopes.ttl} file.
+The metadata in the above example was extracted from the source file,
+transformed into RDF notation and stored as one of the metadata records in the
+\texttt{FanoPolytopes.ttl} file by our fellow Andreas Nareike.
 
 If metadata are separated from core data and collected into a single RDF graph
-one can SPARQL query \cite{sdsparql} the data and find all examples with given
-properties.  Similar to SQL for relational data SPARQL provides an expressive
-syntax for search and filter purposes for RDF data. Moreover, queries are
-executed using only the HTTP protocol and hence can easily be integrated into
-more complex programming contexts.
+one can SPARQL query the data and find all examples with given properties.
+Similar to SQL for relational data SPARQL provides an expressive syntax for
+search and filter purposes on RDF data. Moreover, queries are executed using
+only the HTTP protocol and hence they can easily be integrated into more
+complex programming contexts.
 
 Let's, e.g., query URI, volume, cone dimension, number of facets and the file
-name in Andreas Paffenholz' collection \texttt{fano-v4d.tgz} for all
-4-dimensional Fano polytopes with lattice volume $v<100$ and at most 7 facets.
-The \texttt{FanoPolytopes} collection is served by our RDF store
-\cite{sdstore}, hence the result can be obtained running the following query
-within the web interface \cite{sdsparql} of the {\SD} SPARQL endpoint.
+name for all 4-dimensional Fano polytopes in Andreas Paffenholz' collection
+\texttt{fano-v4d.tgz} with lattice volume $v<100$ and at most 7 facets.  The
+\texttt{FanoPolytopes} collection is served by our RDF store \cite{sdstore},
+hence the result can be obtained running the following query within the web
+interface \cite{sdsparql} of the {\SD} SPARQL endpoint.
 \begin{code}
   PREFIX sd: <http://symbolicdata.org/Data/Model\#> \\
   select ?uri ?v ?cd ?nfc ?fn\\
@@ -262,33 +267,33 @@ The following test sets example
 \begin{quote}\tt
   http://symbolicdata.org/Data/TestSet/graph10\_001\_k5free
 \end{quote}
-is from the Normaliz collection provided in 2015 by Tim R\"omer (entry~4
+wee took from the Normaliz collection provided in 2015 by Tim R\"omer (entry~4
 below).  It is part of a collection of counterexamples to a conjecture of
 Sturmfels and Sullivant (more about that in entry~3 below).  The remaining
 lines contain mainly numerical metadata for the given example.
 \begin{code}
   <http://symbolicdata.org/Data/TestSet/graph10\_001\_k5free>\+\\
   a sd:TestSet, sd:Normalization ;\\
-rdfs:label "TestSet/graph10\_001\_k5free" ;\\
-rdfs:comment """Verification of a conjecture of Sturmfels and 
+rdfs:label {\dq}TestSet/graph10\_001\_k5free{\dq} ;\\
+rdfs:comment {\dq}{\dq}{\dq}Verification of a conjecture of Sturmfels and 
 \\\>Sullivant on normality of cut polytopes for some specific
-\\\> graphs [SS], [BHIKS], [O], [S].""" ;\\
-sd:hasOrigin """Normaliz Collection, Tim Roemer 2015-03.
-\\\>From Example 8 of the Normaliz collection""" ;\\
-sd:hasNumberOfExtremeRays "512"^^xsd:integer ;\\
-sd:hasSupportingHyperplanes "352"^^xsd:integer ;\\
-sd:numberOfRows "512"^^xsd:integer ;\\
-sd:numberOfColumns "48"^^xsd:integer ;\\
-sd:hasNumberOfHilbertBasisElements "512"^^xsd:integer ;\\
-sd:hasRank "25"^^xsd:integer ;\\
+\\\> graphs [SS], [BHIKS], [O], [S].{\dq}{\dq}{\dq} ;\\
+sd:hasOrigin {\dq}{\dq}{\dq}Normaliz Collection, Tim Roemer 2015-03.
+\\\>From Example 8 of the Normaliz collection{\dq}{\dq}{\dq} ;\\
+sd:hasNumberOfExtremeRays {\dq}512{\dq}{\xsdprefix}xsd:integer ;\\
+sd:hasSupportingHyperplanes {\dq}352{\dq}{\xsdprefix}xsd:integer ;\\
+sd:numberOfRows {\dq}512{\dq}{\xsdprefix}xsd:integer ;\\
+sd:numberOfColumns {\dq}48{\dq}{\xsdprefix}xsd:integer ;\\
+sd:hasNumberOfHilbertBasisElements {\dq}512{\dq}{\xsdprefix}xsd:integer ;\\
+sd:hasRank {\dq}25{\dq}{\xsdprefix}xsd:integer ;\\
 sd:hasNormalizPrimaryBase
 \\\><http://.../normaliz/InterChallExamples/cut\_monoids.zip> ;\\
 sd:hasNormalizSDBase
 \\\><http://symbolicdata.org/.../graph10\_001\_k5free.zip> .
 \end{code}
 The last two lines contain additional information about the core data itself --
-the last line gives the URL to a zip-file containing the files
-\texttt{graph10\_001\_k5free.in} (input in \texttt{Normaliz} format) and
+the last line gives the URL to a zip-file with the files
+\texttt{graph10\_001\_k5free.in} (input in Normaliz format) and
 \texttt{graph10\_001\_k5free.out} (containing among others listings of the 512
 elements of the Hilbert basis and the 512 extremal rays in Normaliz syntax) and
 the second last line points to an external source with (among others) the
@@ -364,7 +369,7 @@ access the resources themselves.
 Usually the research data collections (resources in the RDF terminology) of a
 certain community are stored in a specially designed community-internal format,
 often as plain text (e.g., the Normaliz collection \cite{normaliz}), in a
-special XML notation (e.g., the Polymake collection \cite{polymake}) or as SQL
+special XML notation (e.g., the polymake collection \cite{polymake}) or as SQL
 database (e.g., the Database for Number Fields \cite{MalleKlueners}).  Such
 formats usually employ special formal semantics agreed within the community as
 an effective way to store domain specific input and output data and used by
@@ -372,13 +377,16 @@ commonly developed tools with appropriate parsing functionality.
 
 Usually such formats are extended to store research metadata, i.e.,
 fingerprints or \emph{resource descriptions} in the RDF terminology, together
-with the research data.  For SPARQl querying one has to extract those
+with the research data.  For SPARQL querying one has to extract those
 fingerprints and to transform the data in an appropriate RDF notation. In the
 previous section we demonstrated the advantage of such an approach, that
 suggests a subdivision of duties between the intracommunity efforts to compile
 well designed fingerprints and the intercommunity level to provide appropriate
 concepts and tools to upload, manage, search and filter such fingerprint
-metadata and to combine such data from different subcommunities.
+metadata and to combine such data from different subcommunities.  Similar to
+unit testing or benchmarking environments the latter effort is a \emph{cross
+  cutting concern}, since it can be technically solved once and afterwards
+reused many times within different scientific domains. 
 
 We applied this approach, first used within the {\SD} Project to navigate
 within polynomial systems data, to the data sets on polytopes and on transitive
@@ -429,24 +437,23 @@ released in September 2013 we completed a redesign of the data along RDF based
 semantic technologies, set up a Virtuoso based RDF triple store and an SPARQL
 endpoint as Open Data services along Linked Data standards \cite{lod}, and
 started both conceptual and practical work towards a semantic-aware Computer
-Algebra Social Network \cite{cicm-14}.
+Algebra Social Network.
 
 In March 2016 version 3.1 of the {\SD} tools and data was released. On the
 level of research tools and data the new release contains new resource
-descriptions (``fingerprints'' in the notion of \cite{cicm-14}) of remotely
-available data on transitive groups (\emph{Database for Number Fields} of
-Gunter Malle and J\"urgen Kl\"uners \cite{MalleKlueners}) and polytopes
-(databases of Andreas Paffenholz \cite{Paffenholz} within the \emph{polymake}
-project \cite{polymake}), a recompiled and extended version of test sets from
-integer programming -- work by Tim R\"omer (\emph{Normaliz} group
-\cite{normaliz}) -- and an extended version of the \emph{SDEval benchmarking
-  environment} -- work by Albert Heinle \cite{heinle-15}.
+descriptions of remotely available data on transitive groups (\emph{Database
+  for Number Fields} by Gunter Malle and J\"urgen Kl\"uners
+\cite{MalleKlueners}) and polytopes (databases by Andreas Paffenholz
+\cite{Paffenholz} within the \emph{polymake} project \cite{polymake}), a
+recompiled and extended version of test sets from integer programming -- work
+by Tim R\"omer (\emph{Normaliz} group \cite{normaliz}) -- and an extended
+version of the \emph{SDEval benchmarking environment} -- work by Albert Heinle
+\cite{heinle-15}.
 
 The main development is coordinated within the \emph{{\SD} Core Team}
 (Hans-Gert Gr\"abe, Ralf Hemmecke, Albert Heinle) with direct access to our
-public github account \url{https://github.com/symbolicdata}.  We refer to the
-{\SD} Wiki \cite{sdwiki} for more details about the project and the new
-release.
+public github account \url{https://github.com/symbolicdata}.  We refer to our
+wiki \cite{sdwiki} for more details about the project and the new release.
 
 \section{Towards a Computer Algebra Social Network}
 
@@ -460,12 +467,12 @@ and semantically enriched information about the scientific and social
 
 Several years ago the {\SD} Project extended its scope to analyze and support
 the exchange of such information in a structured way.  Our vision is a
-distributed and tool based network of semantic aware nodes corresponding to
-the (small and big) nodes of the real CA research network.  Such a
-\emph{Computer Algebra Social Network} (CASN) should be a semantically
-enriched digital infrastructure for a social network of scientific research
-and scientific researchers within the Computer Algebra community and its
-severe subcommunities similar to other social networks.
+distributed and tool based network of semantic aware nodes corresponding to the
+(small and big) nodes of the real CA research network.  Such a \emph{Computer
+  Algebra Social Network} (CASN) should be a semantically enriched digital
+infra\-structure for a social network of scientific research and researchers
+within the Computer Algebra community and its severe subcommunities similar to
+other social networks.
 
 Note that there is already a digital ``CA memory'' -- a huge number of very
 loosely related web pages about conferences, meetings, working groups,
@@ -474,14 +481,14 @@ etc. The CASN design should take into account such a diversity and develop a
 decentralized solution based on modern semantic technologies that increases the
 awareness of the different parts of that already existing ``CA network'' and
 supports the \emph{exploration} of that network to get useful deep results in
-an easy manner.
+an easy way.
 
 \subsection{CASN Nodes}
 
 For a proper CASN design it is essential to exploit the potential of concepts,
 tools and standards of the fast growing distributed Linked Open Data (LOD)
 Cloud\footnote{ \url{http://lod-cloud.net}}.  As a first step towards a digital
-network within the CA community capable to \emph{explore} social and scientific
+network within the CA community capable to explore social and scientific
 relations
 \begin{itemize}
 \item we operate the RDF based {\SD} main data store together with its SPARQL
@@ -491,13 +498,13 @@ relations
 \end{itemize}
 RDF principles neither demand such nodes to be uniformly structured nor do such
 nodes require big web resources. LOD sources are self-explanatory by design and
-its structure can be explored with appropriate RDF tools by interested third
+their structure can be explored with appropriate RDF tools by interested third
 parties at run time to prepare to fetch the information in a structured way.
 Hence the workload to present and explore data within such a CASN network can be
 shared in a wide scope between data providers and data consumers.
 
-In a first version such a node can be even only a directory with valuable RDF
-files publicly accessible in the web as provided by the CASN sample
+In a first version such a node can be even only a publicly accessible directory
+of RDF files containing valuable information as provided by the CASN sample
 node\footnote{ \url{http://symbolicdata.org/rdf/}} of the {\SD} Project. As
 proof of concept in the subdirectory \texttt{Conferences} we provide
 prototypically detailed information about five CA conferences using the
@@ -534,7 +541,7 @@ CA Rundbrief.  The RDF database contains more advanced information about
 conferences as, e.g., submission deadlines or program committees.
 
 We run this service in a draft version already for several years and compiled
-from it a list of (at the moment 166) \emph{Past Conferences}. In summer 2016
+from it a list of (at the moment 173) \emph{Past Conferences}. In summer 2016
 this data was enhanced with additional data about past conferences supplied by
 the SIGSAM web team and extended by a \emph{Conference Series} concept from
 the SIGSAM collection.  The SIGSAM collection provides structured information
@@ -569,18 +576,18 @@ Interoperability between providers remains a great challenge since it requires
 to interlink data sources that are very private from a business point of view.
 Whereas this Gordian knot is hard to cut from a provider's position, a
 comparatively small scientific community could solve that interoperability
-challenge by a common effort -- develop its own People Database, i.e., its own
+challenge by a common effort -- develop its own people database, i.e., its own
 URI system for people and provide dictionaries to the part of the URI systems
 of the different providers relevant to their academic scope.
 
-This is the goal of the {\SD} People Database for the CA community.  As one of
+This is the goal of the {\SD} people database for the CA community.  As one of
 the benefits of such a disambiguation one can track reputation and merits more
 precisely querying the whole {\SD} database or even interlinking it with other
 RDF based sources within the Linked Open Data Cloud. Moreover people within
 the CASN can systematically provide and update information about their own
 scientific activities.
 
-Currently the {\SD} People Database contains more than 1200 entries, i.e.,
+Currently the {\SD} people database contains more than 1200 entries, i.e.,
 digital identities of scientists that are active in the area of Computer
 Algebra.  These URIs were mainly extracted from program committee lists of
 different conferences or (in a restricted scope) from lists of authors of
@@ -591,17 +598,17 @@ As standard information we provide personal information as instance of
 \texttt{foaf:homepage} and \texttt{sd:affiliation} (a literal). Due to privacy
 reasons we do not provide \texttt{foaf:mbox} (email) values.  This list is
 steadily enlarged and used as URI reference for reports about different
-activities (invited speakers, conference organizers, program committees etc.)
-in other parts of our CASN database.
+activities (invited speakers, conference organizers, program committees, thesis
+supervisors and reviewers etc.) in other parts of our CASN database.
 
 As proof of concept we aligned our URIs in a common task with the
 ``Zentralblatt'' with their author disambiguation system and produced more
 than 300 \texttt{sd:hasZBMathAuthorID} matches. This work was done in 2014 on
-an early version of the {\SD} People Database and can be queried from our RDF
+an early version of the {\SD} people database and can be queried from our RDF
 store, too.  In a near future we plan to update that alignment with
 ``Zentralblatt''.  The concept can easily be extended to other content
 providers (in particular to the ACM people database or the MathSciNet author
-disambiguation system) that are interested in such a cooperation.
+disambiguation system) if they are interested in such a cooperation.
 
 \subsection{The CA Dissertations Project}
 
@@ -695,14 +702,14 @@ also such a discussion.
   [2016-11-16]
 \bibitem{swmath} swMATH -- an Information Service for Mathematical Software.
   \newblock \url{http://swmath.org/about_contact}. [2016-11-16]
-\bibitem{sdwiki} The {\SD} Project.  \url{http://wiki.symbolicdata.org}.
-  [2016-11-20]
-\bibitem{sdstore} The {\SD} RDF Data Store.
-  \url{http://symbolicdata.org/Data}.  [2016-11-15] 
 \bibitem{sdrepo} The {\SD} Github Account.
   \url{https://github.com/symbolicdata}.  [2016-11-15]
+\bibitem{sdstore} The {\SD} RDF Data Store.
+  \url{http://symbolicdata.org/Data}.  [2016-11-15] 
 \bibitem{sdsparql} The {\SD} SPARQL Endpoint. 
    \url{http://symbolicdata.org:8890/sparql}. [2016-11-20]
+\bibitem{sdwiki} The {\SD} Project.  \url{http://wiki.symbolicdata.org}.
+  [2016-11-20]
 \end{thebibliography}
 
 \end{document}
