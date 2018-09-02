@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage{CAR}
-%\usepackage{sigsam}
+%\usepackage{sigsam,bbm}
 \usepackage[utf8]{inputenc}
 
 \def\SD{\textsc{SymbolicData}}
@@ -48,9 +48,9 @@ algebra system -- the design of mechanisms and formats for dealing with big old
 data'', i.e. ``the output of a mathematical computation that is much larger
 than a few lines, and is intended for storage in a repository, or for further
 processing by a different program'', and presented a list of 12 papers. In
-these papers authors from different areas of computer mathematics describe
+these papers authors from different areas of computational mathematics describe
 efforts, concepts and data stores to resolve for themselves or for a small
-computer mathematics subcommunity such a problem.  As central goal each of
+computational mathematics subcommunity such a problem.  As central goal each of
 these projects tries to establish from the very scratch a research
 infrastructure capable to present, access, inspect, exchange and maintain
 structured research data in both a powerful and sustainable way.
@@ -97,21 +97,21 @@ Algebra.  Such inter- and infradisciplinary engagement is little recognized as
 beneficial for the scientific career of productive young researcher. We
 developed the concept of a \emph{Computer Algebra Social Network} (CASN)
 \cite{car-55} based on modern semantic technologies and maintained a
-prototypical distributed implementation as showcase over several years.
+prototypical distributed implementation as a showcase over several years.
 
-As me, a great number of people involved with the development of research data
-infrastructure during the last 20 years already retired or will retire during
-the next years.  It is up to the next generation to take over the baton.
+Like myself, a great number of people involved in the development of research
+data infrastructure during the last 20 years already retired or will retire
+during the next years.  It is up to the next generation to take over the baton.
 During the last years we spent efforts to consolidate and concentrate the {\SD}
-activities on github. In particular we moved the wiki to github pages, stopped
+activities on GitHub. In particular we moved the wiki to GitHub pages, stopped
 to update the CASN data base and canceled our announcement mailing list as a
 probably outdated way of communication.  It is the part of the next generation
 to evaluate the {\SD} heritage and update the parts that are worth to be
-continued.  
+continued.
 
 \section{Research Data in Science}
 
-Research data play an important role within science in at least four
+Research data plays an important role within science in at least four
 dimensions: 1) artifacts as problem sources (in particular digitized artifacts
 in the humanities), 2) benchmark examples as well established challenges for
 different problem classes, 3) raw output of research to be analyzed and
@@ -131,9 +131,9 @@ FRISCO, dimension 2 and 3 started to play a more important role.  Gert-Martin
 Greuel reported in his invited lecture \emph{Computeralgebra and Algebraic
   Geometry, Achievements and Perspectives} in particular about the progress in
 the Gr\"obner business as one of the core algorithmic building blocks in
-advanced polynomial systems solving and algebraic geometry.  In 1993 the FGLM
-algorithm was published but there was rumor about new algorithmic ideas of a
-young guy in Paris and in particular Greuel's Singular group was interested in
+advanced polynomial systems solving and algebraic geometry.  In 1993, the FGLM
+algorithm was published. But there were rumors about new algorithmic ideas of a
+young guy in Paris, and Greuel's Singular group in particular was interested in
 evaluating these ideas.  Unfortunately, after the end of the PoSSo project
 there was no established reference for the famous \emph{PoSSo test suite} and
 different printed versions with a number of misprints were in circulation.  It
@@ -146,7 +146,7 @@ start a \emph{Computer Algebra Benchmarking Initiative} and invited for a
 initiative will discuss, develop, define, collect all facets of this
 challenging problem. It should analyse and develop test suites but also define
 standard examples for the various topics of computer algebra where algorithm
-and system developer can test their newly developed and improved
+and systems developers can test their newly developed and improved
 methods. Furthermore, all kinds of test examples should be collected and
 consolidated. ''\footnote{\url{http://bwcloud-108-017.bwcloud.uni-mannheim.de/cafgbench.html}.}
 Heinz Kredel presented a \emph{Computer Algebra Benchmarks Collection from July
@@ -171,7 +171,7 @@ Project. Olaf Bachmann and me developed and implemented with great support by
 other members of the Singular team the basic concepts and a first version of a
 benchmarking environment in the area of polynomial systems solving, called {\sc
   PolyData} and later on {\SD}.  We collected a considerable number of the
-benchmark examples used at that time for testing polynomial systems solver (in
+benchmark examples used at that time for testing polynomial systems solvers (in
 particular the PoSSo test suite), made it publicly and reliably available in a
 digital exchange format and developed a standardized environment based on GNU
 make and GNU time to run, time and monitor test computations on such examples
@@ -182,7 +182,7 @@ approach was inspired by the rich experience of the Open Culture movement
 “business models” to run infrastructures. It was an early attempt to emphasize
 the advantage of an explicitly elaborated concept of a community-based solution
 to the “tragedy of the commons” within the Computer Algebra community and to
-apply such a concept to run a part of its research infrastructure.
+apply such a concept to run as part of its research infrastructure.
 
 Nowadays the awareness of the importance of digital research infrastructure
 increased both in the scientific communities and also in research politics.
@@ -215,7 +215,7 @@ approaches as continuous integration, continuous development and continuous
 deployment of modular software pieces in distributed environments.  All this
 makes software development more complex and requires a good theoretical
 understanding of the corresponding architectural concepts.  To maintain such
-diverging goals within a single software modern software engineering
+diverging goals within a single software, modern software engineering
 distinguishes between core and cross cutting concerns. \emph{Core concerns}
 define the main goal of the implementation that is mission critical or requires
 special domain specific knowledge, insight and experience. \emph{Cross cutting
@@ -305,12 +305,12 @@ challenge was the definition of the metadata as a social process that requires
 not only sufficient domain specific insight but also resilient agreements about
 responsibilities to update and maintain the data and metadata.  The first part
 of this challenge is reflected in our concept of \emph{semantic-aware
-  fingerprints} that focuses on the usage condition of \emph{any} research
-data (awareness of the semantics) and our special use case for the meta
-information -- search. The needle in the haystack, the fingerprint in the
-police file or the puzzle piece in the stack: To find it a clear domain model
-and a clear search strategy are required, and both are not independent one from
-the other.  For more details we refer to \cite{icms-16}.
+  fingerprints} that focuses on the usage condition of \emph{any} research data
+(awareness of the semantics) and our special use case for the meta information
+-- search. The needle in the haystack, the fingerprint in the police file or
+the puzzle piece in the stack: To find it a clear domain model and a clear
+search strategy are required, and both are not independent from each other.
+For more details we refer to \cite{icms-16}.
 
 After a certain consolidation process on March 1, 2016, version 3.1 of the
 {\SD} tools and data was released. The new release contained
@@ -328,7 +328,7 @@ After a certain consolidation process on March 1, 2016, version 3.1 of the
   past conferences) of data from the CASN -- the Computer Algebra Social
   Network subproject.
 \end{itemize}
-Furthermore, our github
+Furthermore, our GitHub
 account\footnote{\url{https://github.com/symbolicdata}.} was transformed into
 an organizational account and the git repo structure was redesigned better to
 reflect the special life-cycle requirements of the different parts of our
@@ -345,10 +345,10 @@ algorithmic problem classes with clearly defined rules and places.
 
 In 2012 we organized a workshop on
 benchmarking\footnote{\url{https://symbolicdata.github.io/Events.2012-12}.}
-with people from communities close-by Computer Algebra.  Satya Samal presented
+with people from communities close to Computer Algebra.  Satya Samal presented
 the PoCaB Project -- Platform of Chemical and Biological Analysis Using
 Computer Algebra Methods -- and explained in detail structural approaches
-within the PoCaB Databases and how data are generated within the PoCaB
+within the PoCaB Databases and how data is generated within the PoCaB
 framework.  PoCaB is interlinked with different communities within Computer
 Algebra (the polynomial systems solving and the polymake communities) and also
 beyond. It heavily exploits biological databases (BioModel Database, KEGG
@@ -374,20 +374,20 @@ in High Performance Computing\footnote{\url{http://www.hpcchallenge.org},
 community\footnote{\url{http://www.satcompetition.org/}.}.
 
 The 1998 Special Session on Benchmarking stated that such contests with clear
-rules by certain reasons are lacking in the area of Computer Algebra. This did
-not change during the last 20 years.  Evaluating the reason for such a
-longstanding deficit we observed that socially mounted benchmarking cultures
-live in certain Computer Algebra subcommunities but are rarely communicated
-beyond their scope. So what's about communication between Computer Algebra
-subcommunities in general? RDF concepts are well suited not only to describe
-collections of benchmark data but also to support communication on other
-scientific activities and achievements between different subcommunities.
-Properly organized metadata generated by different stakeholders can easily be
-collected not only in a central store but also in a well organized distributed
-environment as a ``scientific Facebook'' -- we called such a concept
-\emph{Computer Algebra Social Network} (CASN) \cite{cicm-14} -- that could be
-implemented as a network of \emph{CASN nodes} as part of a social research
-infrastructure within the Linked Open Data Cloud.
+rules are lacking in the area of Computer Algebra. This did not change during
+the last 20 years.  Evaluating the reason for such a longstanding deficit we
+observed that socially mounted benchmarking cultures live in certain Computer
+Algebra subcommunities but are rarely communicated beyond their scope. So
+what about communication between Computer Algebra subcommunities in general?
+RDF concepts are well suited not only to describe collections of benchmark data
+but also to support communication on other scientific activities and
+achievements between different subcommunities.  Properly organized metadata
+generated by different stakeholders can easily be collected not only in a
+central store but also in a well organized distributed environment as a
+``scientific Facebook'' -- we called such a concept \emph{Computer Algebra
+  Social Network} (CASN) \cite{cicm-14} -- that could be implemented as a
+network of \emph{CASN nodes} as part of a social research infrastructure within
+the Linked Open Data Cloud.
 
 Since 2012 we tried to identify problem settings of common interest,
 implemented building blocks of such a network, tried to get showcases socially
@@ -471,7 +471,7 @@ also the (very outdated)
 overview\footnote{\url{http://www.fachgruppe-computeralgebra.de/systeme/}.} on
 the website of the German Fachgruppe.  We used an undocumented feature of
 swMATH to compile also links to the abstracts of 10 papers related to that
-software.  The data is available also from our RDF store hence earns all 5
+software.  The data is also available from our RDF store hence earns all 5
 stars of Tim Berners-Lee.  A presentation of this database can be found at our
 {\SD} demonstration site \cite{sdinfo}.
 
@@ -501,7 +501,7 @@ goals.''\footnote{\url{http://oeisf.org/\#GOALS}.}
 During the last years the {\SD} team spent efforts on goal 3 to prepare for
 another ``dry period'' since we didn't succeed with goal 4\footnote{For details
   we refer to \url{https://symbolicdata.github.io/New.html}.}.  We concentrated
-the {\SD} data and wiki at our github account and terminated several of our
+the {\SD} data and wiki at our GitHub account and terminated several of our
 ongoing activities (updating the record of upcoming conferences, advancing the
 alignment with swMATH or the dissertations
 project\footnote{\url{https://symbolicdata.github.io/Dissertations}.})
@@ -512,8 +512,8 @@ RDF best practices it is of great importance to own that domain and to set up
 and operate an RDF store under that web address.  The domain
 \texttt{http://symbolicdata.org} is owned by the German Fachgruppe and
 currently operated on a server at Leipzig University.  Unfortunately, the Board
-of the German Fachgruppe doesn't understand well enough the importance to keep
-running such an arrangement ``indefinitely'' (private communication with Gregor
+of the German Fachgruppe doesn't understand the importance to keep running such
+an arrangement ``indefinitely'' well enough (private communication with Gregor
 Kemper).
 
 \section{What Else?}
@@ -550,16 +550,18 @@ Fachgruppe\footnote{\url{http://www.fachgruppe-computeralgebra.de/rdf/}.} into
 the background.
 
 A great number of people (Gert-Martin Greuel, Gerhard Pfister, Winfried Neun,
-Wolfram Sperber, Hannes Schöne\-mann, me) involved in one or another way with
+Wolfram Sperber, Hannes Schöne\-mann, me) involved in one way or another with
 {\SD} already retired or will retire during the next years.  Other people (Olaf
 Bachmann, Ralf Hemmecke, Andreas Nareike, Viktor Levandovsyy, Albert Heinle)
-timely involved with {\SD} left Computer Algebra or are inactive with the
-project at the moment.
+timely involved in {\SD} left Computer Algebra or are inactive with the project
+at the moment.
 
 In this paper we described the main achievements and conceptual points of the
 {\SD} project so far.  It is up to the next generation to take over the baton,
 to evaluate the {\SD} heritage and update the parts that are worth to be
 continued. If any.
+
+% Fix heading of thebibliography
 
 \begin{thebibliography}{xxx}\raggedright
 \bibitem{normaliz} Bruns, W., Ichim, B., R\"omer. T., Sieg, R., S\"oger, C.:
