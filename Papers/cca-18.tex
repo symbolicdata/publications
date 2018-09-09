@@ -1,33 +1,39 @@
-\documentclass[11pt]{article}
-\usepackage{CAR}
+\documentclass[12pt]{article}
+\usepackage{sigsam,bbm}
 
-\def\SD{\textsc{SymbolicData}}
+\def\SD{\textsc{Sym\-bolic\-Data}}
 
-%\date{Version of September 9, 2018}
+% leave as is
+\issue{tba.}
+\articlehead{ACM CCA, tba.}
+\titlehead{20 Years {\SD}}
+\authorhead{Hans-Gert Gr\"abe}
+\setcounter{page}{1}
+
+\title{20 Years {\SD}}
+
+\author{Hans-Gert Gr\"abe\\ Institute of Computer Science\\ Leipzig
+  University\\ Leipzig, Germany\\\url{graebe@informatik.uni-leipzig.de}}
+
+\date{September 7, 2018}
 
 \begin{document}
-\Aufsatz
-% Title
-{20 Years {\SD}}
-% Short title for the table of contents
-{20 Years {\SD}}
-% Authors
-{H.-G.\ Gr\"abe}
-% Label of authors' names
-{graebe}
-% Names and adresses
-{H.-G.\ Gr\"abe, Leipzig University}
-% Images of authors
-{HGG.jpg}
-% E-Mails
-{graebe@informatik.uni-leipzig.de}
+\maketitle
 
-\begin{otherlanguage}{english}        
-\vspace{3mm}
-\begin{multicols}{2}
-\noindent
-  
-\Ueberschrift{Introduction}{sec1}
+\begin{abstract}
+  The {\SD} Project on testing an benchmarking Computer Algebra software grew
+  up from the Special Session on Benchmarking at the 1998 ISSAC conference.
+  During 20 years we collected reserach data and meta information, developed a
+  test framework along the ``cross cutting concerns'' of modern software
+  engineering and experimented with semantic technologies as a building block
+  of a modern distributed socio-technical research infrastructure in the area
+  of Computer Algebra. This paper presents a comprehensive survey of the most
+  important motivations, concepts, steps, efforts and practical achievements of
+  the {\SD} Project to contribute to the formation of such a research
+  infrastructure.
+\end{abstract}
+
+\section{Introduction}
 
 At the OSCAR
 meeting\footnote{\url{https://www.mis.mpg.de/calendar/conferences/2017/oscar2017.html}.}
@@ -98,7 +104,7 @@ list as a probably outdated way of communication.  It is due to the next
 generation to evaluate the {\SD} heritage and update the parts that are worth
 to be continued.
 
-\Ueberschrift{Research Data in Science}{sec2}
+\section{Research Data in Science}
 
 Research data plays an important role within science in at least four
 dimensions: 1) artifacts as problem sources (in particular digitized artifacts
@@ -195,6 +201,7 @@ Hannover\footnote{\url{https://www.tib.eu/de/}.} and the upcoming community of
 Research Software
 Engineers\footnote{\url{https://www.de-rse.org/de/index.html}.}. 
 
+
 Several activities concerning research data are on the way in the ``big
 scene'': \emph{FORCE-11\footnote{\url{https://www.force11.org/}.}} and the
 \emph{Research Data Alliance\footnote{\url{https://www.rd-alliance.org/}.}}
@@ -210,7 +217,7 @@ Archive\footnote{\url{https://www.softwareheritage.org/}.}), see \cite{cca-16}
 for a survey.  {\SD} provides 20 years of experience, in particular with
 semantic technologies, for these broader initiatives.
 
-\Ueberschrift{Testing and Benchmarking in Modern Software Engineering}{sec3}
+\section{Testing and Benchmarking in Modern Software Engineering}
 
 Testing and benchmarking is a common task in software engineering. Modern
 software development concepts for enterprise middleware provide architectural
@@ -237,7 +244,7 @@ realize short term core business in a more efficient way.
 Such approaches are nowadays common also within the big Computer Algebra
 software projects SageMath, OpenDreamKit and OSCAR. The {\SD} benchmark
 activities designed by Olaf Bachmann 20 years ago anticipated several such
-concepts still unknown at that time. Since 2013 this framework was enhanced,
+concepts still unknown at that time.  Since 2013 this framework was enhanced,
 advanced and consequently used in the working group of Viktor Levandovskyy at
 RWTH Aachen, This
 \emph{SDEval\footnote{\url{https://symbolicdata.github.io/SDEval}.}  Testing
@@ -263,7 +270,7 @@ this embedding is used by the SageMath community. The documentation
 refers\footnote{\url{http://doc.sagemath.org/html/en/reference/databases/sage/databases/symbolic_data.html}.}
 only to an earlier implementation provided by Martin Albrecht.
 
-\Ueberschrift{Semantic Technologies}{sec4}
+\section{Semantic Technologies}
 
 With the consolidation of concepts as Open Access, Open Data and the emerging
 semantic web the general understanding of the importance of community-based
@@ -280,7 +287,7 @@ standards\footnote{\url{https://en.wikipedia.org/wiki/Linked_data}.}. The
 importance of the yet heavily growing Linked Open Data
 Cloud\footnote{\url{http://lod-cloud.net}.} is hardly to underestimate.
 
-\Ueberschrift{Semantic Aware Fingerprints}{sec5}
+\section{Semantic Aware Fingerprints}
 
 The main goal of {\SD} is on data -- structure, maintain and present research
 data in a digitally and publicly available way. 20 years ago we started with
@@ -347,7 +354,7 @@ an organizational account and the git repository structure was redesigned
 better to reflect the special life-cycle requirements of the different parts of
 our activities.
 
-\Ueberschrift{Research Infrastructure as a Social Project}{sec6}
+\section{Research Infrastructure as a Social Project}
 
 So far we mainly discussed technical questions of structuring data, defining
 and compiling metadata and designing tools and workflows for local testing and
@@ -488,7 +495,7 @@ that software.  Since the data is also available from our RDF store it earns
 all 5 stars of Tim Berners-Lee.  A presentation of this database can be found
 at our {\SD} demonstration site \cite{sdinfo}.
 
-\Ueberschrift{{\SD} as Non-Project}{sec7}
+\section{{\SD} as Non-Project}
 
 A project is usually defined by a \emph{goal}, \emph{attached resources}
 (money, web space, human resources) and a \emph{time span} (as basis for
@@ -528,7 +535,7 @@ Unfortunately, the current board of the German Fachgruppe doesn't understand
 well enough the importance to keep such an arrangement running ``indefinitely''
 (private communication with Gregor Kemper).
 
-\Ueberschrift{What Else?}{sec8}
+\section{What Else?}
 
 We acknowledge the strong support from the Board of the German Fachgruppe over
 many years who sponsors the domain \texttt{symbolicdata.org} since 2005 and was
@@ -572,62 +579,57 @@ In this paper we described the main achievements and conceptual points of the
 to evaluate the {\SD} heritage and update the parts that are worth to be
 continued. If any.
 
-\Ueberschrift{Acknowledgement}{sec9}
-
-We are grateful to the SIGSAM to help us reach a wider audience by additionally
-publishing this article in the ``Communications in Computer Algebra''.
-
-% Fix heading of thebibliography
+\section{Acknowledgement}
+ 
+We are grateful to the German Fachgruppe to help us reach a wider audience by
+additionally publishing this article in their Rundbrief.
 
 \begin{thebibliography}{xxx}
-\itemsep=0cm plus 0pt minus 0pt
-\bibitem{normaliz} W. Bruns, B. Ichim, T. R\"omer, R. Sieg, C. S\"oger.
-  \newblock Normaliz. Algorithms for Rational Cones and Affine Monoids.
-  \newblock \url{https://www.normaliz.uni-osnabrueck.de}. [2018-09-02]
+\bibitem{normaliz} Winfried Bruns, Bogdan Ichim, Tim R\"omer, Richard Sieg,
+  Christof S\"oger: Normaliz. Algorithms for Rational Cones and Affine Monoids.
+  \url{https://www.normaliz.uni-osnabrueck.de}. [2018-09-02]
 \bibitem{FRISCO} FRISCO -- A Framework for Integrated Symbolic/Numeric
-  Computation, 1996--1999.  \newblock
+  Computation. (1996--1999).
   \url{https://cordis.europa.eu/project/rcn/31471_de.html}.  [2018-09-02]
-\bibitem{polymake} E. Gawrilow, M. Joswig. \newblock Polymake: a Framework for
-  Analyzing Convex Polytopes. \newblock In: G. Kalai, G.M. Ziegler (eds.).
-  \newblock Polytopes -- Combinatorics and Computation (Oberwolfach, 1997),
-  DMV Sem., 29, Birkh\"auser, Basel 2000, pp. 43--73. 
-\bibitem{cicm-14} H.-G. Gr\"abe, S. Johanning, A. Nareike. \newblock The {\SD}
-  Project -- Towards a Computer Algebra Social Network. \newblock In: Workshop
-  and Work in Progress Papers at CICM 2014, CEUR-WS.org, vol. 1186, 2014.
-\bibitem{icms-16} H.-G. Gr\"abe. \newblock Semantic-aware Fingerprints of
-  Symbolic Research Data. \newblock In: G.-M. Greuel, T. Koch, P. Paule,
-  A. Sommese (eds.). \newblock \emph{Mathematical Software -- ICMS 2016}.
-  \newblock LNCS 9725, 2016, pp. 411--418. 
-\bibitem{heinle-15} A. Heinle, V. Levandovskyy. \newblock The SDEval
-  Benchmarking Toolkit. \newblock ACM Communications in Computer Algebra,
-  vol. 49.1, 2015, pp. 1--10.
-\bibitem{cca-16} A. Heinle, W. Koepf, W. Sperber. \newblock Some steps to
-  improve software information. \newblock Computeralgebra-Rundbrief 60 (March
-  2017) \emph{and} Communications in Computer Algebra 51.1 (March 2017),
+\bibitem{polymake} Ewgenij Gawrilow, Michael Joswig: Polymake: a Framework for
+  Analyzing Convex Polytopes. In: Gil Kalai, G\"unter M. Ziegler (eds.),
+  Polytopes -- Combinatorics and Computation (Oberwolfach, 1997), pp. 43--73,
+  DMV Sem., 29, Birkh\"auser, Basel (2000).
+\bibitem{cicm-14} Hans-Gert Gr\"abe, Simon Johanning, Andreas Nareike: The
+  {\SD} Project -- Towards a Computer Algebra Social Network. In: Workshop and
+  Work in Progress Papers at CICM 2014, CEUR-WS.org, vol. 1186 (2014).
+\bibitem{icms-16} Hans-Gert Gr\"abe. \newblock Semantic-aware Fingerprints of
+  Symbolic Research Data. \newblock In Gert-Martin Greuel, Thorsten Koch, Peter
+  Paule, Andrew Sommese (eds.).  \emph{Mathematical Software -- ICMS 2016}.
+  \newblock Volume 9725 of Lecture Notes in Computer Science, page 411--418,
+  2016.  \newblock DOI 10.1007/978-3-319-42432-3.
+\bibitem{heinle-15} Albert Heinle, Viktor Levandovskyy: The SDEval Benchmarking
+  Toolkit. ACM Communications in Computer Algebra, vol. 49.1, pp. 1--10 (2015).
+\bibitem{heinle-web} Albert Heinle: Benchmarks created using SDEval. \newblock 
+  \url{https://cs.uwaterloo.ca/~aheinle/software_projects.html} [2018-09-07]
+\bibitem{cca-16} Albert Heinle, Wolfram Koepf, Wolfram Sperber. \newblock Some
+  steps to improve software information. \newblock Computeralgebra-Rundbrief 60
+  (March 2017) \emph{and} Communications in Computer Algebra 51.1 (March 2017),
   pp. 1--11.
-\bibitem{MalleKlueners} J. Kl\"uners, G. Malle. \newblock A Database for Number
-  Fields.  \newblock \url{http://galoisdb.math.uni-paderborn.de/}. [2018-09-02]
+\bibitem{MalleKlueners} J\"urgen Kl\"uners, Gunter Malle: A Database for Number
+  Fields.  \url{http://galoisdb.math.uni-paderborn.de/}. [2018-09-02]
 \bibitem{odk} OpenDreamKit: Open Digital Research Environment Toolkit for the
-  Advancement of Mathematics. \newblock \url{http://opendreamkit.org/}.
-  [2018-09-01]
-\bibitem{oscar} The OSCAR project.  \newblock
+  Advancement of Mathematics. \url{http://opendreamkit.org/}. [2018-09-01]
+\bibitem{oscar} OSCAR: The OSCAR project.
   \url{https://oscar.computeralgebra.de/}.  [2018-09-01]
-\bibitem{Paffenholz} A. Paffenholz. \newblock Polytope Database. \newblock 
-  \url{http://www.mathematik.tu-darmstadt.de/~paffenholz/data/}.  [2018-09-02] 
+\bibitem{Paffenholz} Andreas Paffenholz: Polytope Database.
+  \url{http://www.mathematik.tu-darmstadt.de/~paffenholz/data/}.  [2018-09-02]
 \bibitem{PoSSo} The PoSSo Project. Polynomial Systems Solving -- ESPRIT III BRA
-  6846, 1992--1995. \newblock 
+  6846.  (1992--1995).
   \url{https://cordis.europa.eu/project/rcn/9106_en.html}.  [2018-09-02]
-\bibitem{sagemath} The SageMath Project. \newblock
-  \url{http://www.sagemath.org/}.  [2018-09-03]
+\bibitem{sagemath} The SageMath Project.  \url{http://www.sagemath.org/}.
+  [2016-03-16]
 \bibitem{swmath} swMATH -- an Information Service for Mathematical Software.
   \newblock \url{http://swmath.org}. [2018-09-02]
-\bibitem{sdinfo} The {\SD} Demonstration site. \newblock 
+\bibitem{sdinfo} The {\SD} Demonstration site.
   \url{http://symbolicdata.org/info}.  [2018-09-02]
-\bibitem{sdstore} The {\SD} RDF Data Store. \newblock 
+\bibitem{sdstore} The {\SD} RDF Data Store.
   \url{http://symbolicdata.org/Data}.  [2018-09-02]
 \end{thebibliography}
-                                                                 
-\end{multicols}             
-\end{otherlanguage}
-                
+
 \end{document}
